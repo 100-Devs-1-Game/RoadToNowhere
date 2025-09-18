@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0glopjtk8rbr"
-path="res://.godot/imported/street_crossing.png-1963b07d2e31e49746f310e8f7e3d3fc.ctex"
+uid="uid://ce8nk8nek2syv"
+path="res://.godot/imported/house.png-854208b68ae683f6cbc75df42c1b006d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/singles/street_crossing.png"
-dest_files=["res://.godot/imported/street_crossing.png-1963b07d2e31e49746f310e8f7e3d3fc.ctex"]
+source_file="res://assets/tileset/singles/buildings/house.png"
+dest_files=["res://.godot/imported/house.png-854208b68ae683f6cbc75df42c1b006d.ctex"]
 
 [params]
 

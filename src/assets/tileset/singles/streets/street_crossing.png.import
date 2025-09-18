@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgeqdl0pblrav"
-path="res://.godot/imported/street_dead_end.png-b563813fb72ec3e844fbda197bb677a8.ctex"
+uid="uid://c0glopjtk8rbr"
+path="res://.godot/imported/street_crossing.png-782269f3c55ec7d94e4af5cee2fb4f13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/singles/street_dead_end.png"
-dest_files=["res://.godot/imported/street_dead_end.png-b563813fb72ec3e844fbda197bb677a8.ctex"]
+source_file="res://assets/tileset/singles/streets/street_crossing.png"
+dest_files=["res://.godot/imported/street_crossing.png-782269f3c55ec7d94e4af5cee2fb4f13.ctex"]
 
 [params]
 

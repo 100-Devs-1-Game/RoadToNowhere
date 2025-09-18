@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlaceableTile" load_steps=3 format=3 uid="uid://dxebpvd0s2ljr"]
 
 [ext_resource type="Script" uid="uid://xpgmo5hooyr3" path="res://level/placeable_tile.gd" id="1_fn0d0"]
-[ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/street_straight.png" id="1_s45pl"]
+[ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/streets/street_straight.png" id="1_s45pl"]
 
 [resource]
 script = ExtResource("1_fn0d0")

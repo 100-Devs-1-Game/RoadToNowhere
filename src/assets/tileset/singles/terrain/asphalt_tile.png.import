@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr7xp1vtyha6b"
-path="res://.godot/imported/street_straight.png-3f4fdb743286ee44f6c8990428b8d467.ctex"
+uid="uid://bfqdft0aljwnx"
+path="res://.godot/imported/asphalt_tile.png-70f8f1d660bfe641979cd15e4f3c6211.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/singles/street_straight.png"
-dest_files=["res://.godot/imported/street_straight.png-3f4fdb743286ee44f6c8990428b8d467.ctex"]
+source_file="res://assets/tileset/singles/terrain/asphalt_tile.png"
+dest_files=["res://.godot/imported/asphalt_tile.png-70f8f1d660bfe641979cd15e4f3c6211.ctex"]
 
 [params]
 

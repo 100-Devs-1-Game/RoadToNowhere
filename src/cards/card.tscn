@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ped0aiqybjgm"]
 
-[ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/street_straight.png" id="1_ivai2"]
+[ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/streets/street_straight.png" id="1_ivai2"]
 [ext_resource type="StyleBox" uid="uid://dfqi328nbs1pe" path="res://cards/card_stylebox.tres" id="1_nwofj"]
 [ext_resource type="Script" uid="uid://b3gopghn3hduf" path="res://cards/card.gd" id="2_4k7q8"]
 [ext_resource type="Texture2D" uid="uid://t3pcsw1cx1nx" path="res://assets/card/locked.png" id="3_f61jr"]

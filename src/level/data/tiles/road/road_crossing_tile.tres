@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlaceableTile" load_steps=3 format=3 uid="uid://rw0e4nvy7q8y"]
 
-[ext_resource type="Texture2D" uid="uid://c0glopjtk8rbr" path="res://assets/tileset/singles/street_crossing.png" id="1_x46yx"]
+[ext_resource type="Texture2D" uid="uid://c0glopjtk8rbr" path="res://assets/tileset/singles/streets/street_crossing.png" id="1_x46yx"]
 [ext_resource type="Script" uid="uid://xpgmo5hooyr3" path="res://level/placeable_tile.gd" id="2_i6hnd"]
 
 [resource]
