@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingTile" load_steps=2 format=3 uid="uid://ccsx6qxw27xhb"]
+
+[ext_resource type="Script" uid="uid://46bt6jaqmwsn" path="res://level/building_tile.gd" id="1_bb8uf"]
+
+[resource]
+script = ExtResource("1_bb8uf")
+name = "House"
+description = ""
+target_tilemap = 1
+source_id = 0
+metadata/_custom_type_script = "uid://46bt6jaqmwsn"

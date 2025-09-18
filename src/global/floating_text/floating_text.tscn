@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckpg0mnmkr7pw"]
+
+[ext_resource type="Script" uid="uid://7abxx7sxnl3q" path="res://global/floating_text/floating_text.gd" id="1_4hfn6"]
+
+[node name="Effects" type="Node"]
+script = ExtResource("1_4hfn6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10

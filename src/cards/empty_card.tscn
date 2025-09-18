@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3er8fw54mg2c"]
+
+[ext_resource type="StyleBox" uid="uid://dfqi328nbs1pe" path="res://cards/card_stylebox.tres" id="1_7qern"]
+[ext_resource type="Script" uid="uid://b1w2mgbp2iueo" path="res://cards/empty_card.gd" id="2_uavy7"]
+
+[node name="Empty Card" type="PanelContainer"]
+custom_minimum_size = Vector2(178, 224)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_7qern")
+script = ExtResource("2_uavy7")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

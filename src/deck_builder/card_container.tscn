@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=3 uid="uid://cd1ecb7pjg7cl"]
+
+[ext_resource type="Script" uid="uid://b20tm7cw386ym" path="res://deck_builder/card_container.gd" id="1_ekaqb"]
+[ext_resource type="PackedScene" uid="uid://ped0aiqybjgm" path="res://cards/card.tscn" id="1_jt7a7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekaqb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jobp7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ifsn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x72b6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_araxa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tna7d"]
+bg_color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx2uy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gs5v5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vknxc"]
+bg_color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[node name="Card Container" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ekaqb")
+script = ExtResource("1_ekaqb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Card" parent="VBoxContainer" instance=ExtResource("1_jt7a7")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/up_down_buttons_separator = SubResource("StyleBoxFlat_jobp7")
+theme_override_styles/field_and_buttons_separator = SubResource("StyleBoxFlat_0ifsn")
+theme_override_styles/down_background_pressed = SubResource("StyleBoxFlat_x72b6")
+theme_override_styles/down_background_hovered = SubResource("StyleBoxFlat_araxa")
+theme_override_styles/down_background = SubResource("StyleBoxFlat_tna7d")
+theme_override_styles/up_background_pressed = SubResource("StyleBoxFlat_xx2uy")
+theme_override_styles/up_background_hovered = SubResource("StyleBoxFlat_gs5v5")
+theme_override_styles/up_background = SubResource("StyleBoxFlat_vknxc")
+value = 1.0
+rounded = true
+alignment = 1

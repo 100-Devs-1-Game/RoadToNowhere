@@ -1,0 +1,120 @@
+[gd_scene load_steps=29 format=3 uid="uid://m3lp85yxelcn"]
+
+[ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
+[ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
+[ext_resource type="Script" uid="uid://b4lwfor10ru25" path="res://level/city.gd" id="2_vonw3"]
+[ext_resource type="Texture2D" uid="uid://c0dxu2r3xhgyi" path="res://assets/tileset/singles/dirt_tile.png" id="3_oi3di"]
+[ext_resource type="Texture2D" uid="uid://bfqdft0aljwnx" path="res://assets/tileset/singles/asphalt_tile.png" id="4_km5ld"]
+[ext_resource type="Script" uid="uid://xpgmo5hooyr3" path="res://level/placeable_tile.gd" id="5_8b0r0"]
+[ext_resource type="Texture2D" uid="uid://ce8nk8nek2syv" path="res://assets/tileset/singles/house.png" id="5_i2t4f"]
+[ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/street_straight.png" id="6_8cye3"]
+[ext_resource type="Resource" uid="uid://dxebpvd0s2ljr" path="res://level/data/tiles/road/road_straight_tile.tres" id="6_h6smj"]
+[ext_resource type="Texture2D" uid="uid://c0glopjtk8rbr" path="res://assets/tileset/singles/street_crossing.png" id="7_2orkt"]
+[ext_resource type="Resource" uid="uid://cj8mrl7b8yrj2" path="res://level/data/tiles/road/road_end_tile.tres" id="7_4c15r"]
+[ext_resource type="Texture2D" uid="uid://bgeqdl0pblrav" path="res://assets/tileset/singles/street_dead_end.png" id="8_aicyk"]
+[ext_resource type="Resource" uid="uid://rw0e4nvy7q8y" path="res://level/data/tiles/road/road_crossing_tile.tres" id="8_ait7k"]
+[ext_resource type="PackedScene" uid="uid://b3er8fw54mg2c" path="res://cards/empty_card.tscn" id="9_i2t4f"]
+[ext_resource type="PackedScene" uid="uid://ped0aiqybjgm" path="res://cards/card.tscn" id="10_8cye3"]
+[ext_resource type="Script" uid="uid://cvme5yewc08uu" path="res://level/state_machine/place_tile_state.gd" id="14_h6smj"]
+[ext_resource type="Script" uid="uid://cuvyu4ppqqjha" path="res://level/state_machine/level_state_machine.gd" id="14_v5j5c"]
+[ext_resource type="Script" uid="uid://crka775kceip5" path="res://level/state_machine/draw_card_state.gd" id="15_5pxul"]
+[ext_resource type="Script" uid="uid://btts8e71u2m77" path="res://level/state_machine/scoring_phase_state.gd" id="19_ait7k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0b4ue"]
+texture = ExtResource("3_oi3di")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8b0r0"]
+texture = ExtResource("4_km5ld")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f2txt"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_0b4ue")
+sources/1 = SubResource("TileSetAtlasSource_8b0r0")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6smj"]
+texture = ExtResource("5_i2t4f")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v5j5c"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_h6smj")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pxul"]
+texture = ExtResource("6_8cye3")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fedht"]
+texture = ExtResource("7_2orkt")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4c15r"]
+texture = ExtResource("8_aicyk")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ait7k"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_5pxul")
+sources/1 = SubResource("TileSetAtlasSource_fedht")
+sources/2 = SubResource("TileSetAtlasSource_4c15r")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_u52ul")
+empty_card_scene = ExtResource("9_i2t4f")
+card_scene = ExtResource("10_8cye3")
+
+[node name="Sandbox" type="Node" parent="."]
+script = ExtResource("2_2orkt")
+generate_random_deck = true
+card_pool = Array[ExtResource("5_8b0r0")]([ExtResource("6_h6smj"), ExtResource("7_4c15r"), ExtResource("8_ait7k")])
+min_deck_factor = 1
+max_deck_factor = 1
+generate_random_city = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="City" type="Node2D" parent="." node_paths=PackedStringArray("tilemaps")]
+script = ExtResource("2_vonw3")
+tilemaps = [NodePath("TileMapLayer Ground"), NodePath("TileMapLayer Buildings"), NodePath("TileMapLayer Objects"), NodePath("TileMapLayer Roads")]
+
+[node name="TileMapLayer Ground" type="TileMapLayer" parent="City"]
+tile_set = SubResource("TileSet_f2txt")
+
+[node name="TileMapLayer Buildings" type="TileMapLayer" parent="City"]
+tile_set = SubResource("TileSet_v5j5c")
+
+[node name="TileMapLayer Objects" type="TileMapLayer" parent="City"]
+
+[node name="TileMapLayer Roads" type="TileMapLayer" parent="City"]
+tile_set = SubResource("TileSet_ait7k")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("14_v5j5c")
+current_state = NodePath("Draw Card")
+debug = true
+
+[node name="Draw Card" type="Node" parent="State Machine"]
+script = ExtResource("15_5pxul")
+
+[node name="Place Tile" type="Node" parent="State Machine"]
+script = ExtResource("14_h6smj")
+
+[node name="Scoring Phase" type="Node" parent="State Machine"]
+script = ExtResource("19_ait7k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Deck" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchor_right = 0.02
+anchor_bottom = 0.02
+offset_left = 10.0
+offset_top = 10.0
