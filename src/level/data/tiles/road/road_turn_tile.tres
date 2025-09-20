@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlaceableTile" load_steps=3 format=3 uid="uid://cq6asonmldlcx"]
+
+[ext_resource type="Texture2D" uid="uid://lon8aolxhdc5" path="res://assets/tileset/singles/streets/street_turn.png" id="1_yfmvr"]
+[ext_resource type="Script" uid="uid://xpgmo5hooyr3" path="res://level/placeable_tile.gd" id="2_7y4vd"]
+
+[resource]
+script = ExtResource("2_7y4vd")
+card_icon = ExtResource("1_yfmvr")
+name = "Turn"
+description = ""
+target_tilemap = 3
+source_id = 3
+metadata/_custom_type_script = "uid://xpgmo5hooyr3"

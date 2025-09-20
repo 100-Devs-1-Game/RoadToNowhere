@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cd1ecb7pjg7cl" path="res://deck_builder/card_container.tscn" id="1_vjh6l"]
 [ext_resource type="Script" uid="uid://xpgmo5hooyr3" path="res://level/placeable_tile.gd" id="3_jd04s"]
 [ext_resource type="Resource" uid="uid://dxebpvd0s2ljr" path="res://level/data/tiles/road/road_straight_tile.tres" id="4_hn83w"]
-[ext_resource type="Resource" uid="uid://rw0e4nvy7q8y" path="res://level/data/tiles/road/road_crossing_tile.tres" id="5_jcwdr"]
+[ext_resource type="Resource" uid="uid://rw0e4nvy7q8y" path="res://level/data/tiles/road/road_intersection_tile.tres" id="5_jcwdr"]
 [ext_resource type="Resource" uid="uid://cj8mrl7b8yrj2" path="res://level/data/tiles/road/road_end_tile.tres" id="6_i1hhj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1mvi"]

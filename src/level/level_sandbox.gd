@@ -34,8 +34,9 @@ func generate_city():
 
 	var dirt_tile: FloorTile= load("uid://b316rjq10i810")
 	var house_tile: BuildingTile= load("uid://ccsx6qxw27xhb")
+	var factory_tile: BuildingTile= load("uid://c1mueqekg8h8x")
 
-	var size:= 7
+	var size:= 9
 
 	for x in size:
 		for y in size:
@@ -43,3 +44,5 @@ func generate_city():
 			city.place_tile(dirt_tile, tile) 
 			if randf() < 0.1:
 				city.place_tile(house_tile, tile)
+			elif randf() < 0.05:
+				city.place_tile(factory_tile, tile)

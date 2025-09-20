@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlaceableTile" load_steps=3 format=3 uid="uid://dta13eeeya6vt"]
+
+[ext_resource type="Texture2D" uid="uid://b8a4bn58iil4e" path="res://assets/tileset/singles/streets/street_t_junction.png" id="1_5cnd5"]
+[ext_resource type="Script" uid="uid://xpgmo5hooyr3" path="res://level/placeable_tile.gd" id="2_jsntp"]
+
+[resource]
+script = ExtResource("2_jsntp")
+card_icon = ExtResource("1_5cnd5")
+name = "T-Junction"
+description = ""
+target_tilemap = 3
+source_id = 4
+metadata/_custom_type_script = "uid://xpgmo5hooyr3"
