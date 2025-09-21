@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FloorTile" load_steps=2 format=3 uid="uid://cjvucgx3b5qh7"]
+
+[ext_resource type="Script" uid="uid://kel1fjggtuht" path="res://level/floor_tile.gd" id="1_ovi5u"]
+
+[resource]
+script = ExtResource("1_ovi5u")
+can_build_on = true
+name = "River"
+description = ""
+target_tilemap = 0
+source_id = 2
+metadata/_custom_type_script = "uid://kel1fjggtuht"

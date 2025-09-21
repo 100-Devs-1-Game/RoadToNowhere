@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FloorTile" load_steps=2 format=3 uid="uid://bxxs348bao3ex"]
+
+[ext_resource type="Script" uid="uid://kel1fjggtuht" path="res://level/floor_tile.gd" id="1_ys2np"]
+
+[resource]
+script = ExtResource("1_ys2np")
+can_build_on = true
+name = "Grass"
+description = ""
+target_tilemap = 0
+source_id = 1
+metadata/_custom_type_script = "uid://kel1fjggtuht"

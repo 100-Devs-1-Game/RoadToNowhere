@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="StaticTile" load_steps=2 format=3 uid="uid://b316rjq10i810"]
+[gd_resource type="Resource" script_class="FloorTile" load_steps=2 format=3 uid="uid://b316rjq10i810"]
 
 [ext_resource type="Script" uid="uid://kel1fjggtuht" path="res://level/floor_tile.gd" id="1_sa3fo"]
 
 [resource]
 script = ExtResource("1_sa3fo")
-name = ""
+can_build_on = true
+name = "Asphalt"
 description = ""
 target_tilemap = 0
-atlas_coords = Vector2i(0, 0)
+source_id = 0
 metadata/_custom_type_script = "uid://kel1fjggtuht"
