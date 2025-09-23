@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3mhlerxk5ej6"]
+
+[ext_resource type="Script" uid="uid://cf54pvjpaxh3j" path="res://global/game_data.gd" id="1_0aco7"]
+
+[node name="Game Data" type="Node"]
+script = ExtResource("1_0aco7")
+buildings_tiles_dir = "res://level/data/tiles/buildings"
+ground_tiles_dir = "res://level/data/tiles/ground"
+road_tiles_dir = "res://level/data/tiles/road"
