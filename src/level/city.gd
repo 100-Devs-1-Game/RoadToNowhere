@@ -12,11 +12,20 @@ func _ready() -> void:
 	Global.city= self
 
 
-func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, rotation: Vector2i= Vector2i.ZERO):
+func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.0):
 	var target_tilemap: TileLayer= tile_to_place.target_tilemap
 	var tilemap: TileMapLayer= get_tilemap(target_tilemap)
+	
+	var tile_alternate: int= 0
+	match int(rad_to_deg(tile_rot)):
+		90:
+			tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_H
+		180:
+			tile_alternate= TileSetAtlasSource.TRANSFORM_FLIP_H | TileSetAtlasSource.TRANSFORM_FLIP_V
+		270:
+			tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_V
 
-	tilemap.set_cell(tile_pos, tile_to_place.source_id, Vector2i.ZERO)
+	tilemap.set_cell(tile_pos, tile_to_place.source_id, Vector2i.ZERO, tile_alternate)
 
 	if target_tilemap == TileLayer.BUILDINGS or target_tilemap == TileLayer.ROADS:
 		place_tile(asphalt_tile, tile_pos)

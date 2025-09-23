@@ -11,6 +11,7 @@ func _ready() -> void:
 
 
 func on_enter():
+	tile_sprite.rotation= 0
 	update_sprite_texture()
 
 
@@ -30,12 +31,22 @@ func on_process(delta: float) -> void:
 
 
 func on_unhandled_input(event: InputEvent):
+	if not event.is_pressed():
+		return
+		
 	if event is InputEventMouseButton:
-		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_LEFT:
-				var city: City= Global.city
-				city.place_tile(tile_to_place, city.get_mouse_tile())
-				finished.emit()
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			var city: City= Global.city
+			city.place_tile(tile_to_place, city.get_mouse_tile(), tile_sprite.rotation)
+			finished.emit()
+	elif event.is_action("rotate_left") and tile_to_place.can_rotate:
+		rotate(-1)
+	elif event.is_action("rotate_right") and tile_to_place.can_rotate:
+		rotate(1)
+
+
+func rotate(dir: int):
+	tile_sprite.rotation+= dir * PI / 2
 
 
 func update_sprite_texture():

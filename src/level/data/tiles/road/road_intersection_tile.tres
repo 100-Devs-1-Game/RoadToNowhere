@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_tblul")
 card_icon = ExtResource("1_r2nmx")
+can_rotate = false
 name = "Intersection"
 description = ""
 target_tilemap = 3
