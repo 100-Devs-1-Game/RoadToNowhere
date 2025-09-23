@@ -1,4 +1,4 @@
 extends Node
 
-var level
-var city
+var level: Level
+var city: City
