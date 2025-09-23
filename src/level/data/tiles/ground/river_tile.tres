@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ovi5u")
 can_build_on = true
+is_water = true
 name = "River"
 description = ""
 target_tilemap = 0
