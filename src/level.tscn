@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=45 format=3 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -18,10 +18,14 @@
 [ext_resource type="PackedScene" uid="uid://ped0aiqybjgm" path="res://cards/card.tscn" id="10_8cye3"]
 [ext_resource type="Resource" uid="uid://b4rbwiq8lxy8c" path="res://level/data/tiles/road/parking_lot_tile.tres" id="11_yjxuc"]
 [ext_resource type="Texture2D" uid="uid://c66q4oce54gud" path="res://assets/tileset/singles/buildings/factory.png" id="12_ait7k"]
+[ext_resource type="Resource" uid="uid://b316rjq10i810" path="res://level/data/tiles/ground/asphalt_tile.tres" id="13_aoqsc"]
 [ext_resource type="Script" uid="uid://cvme5yewc08uu" path="res://level/state_machine/place_tile_state.gd" id="14_h6smj"]
+[ext_resource type="Texture2D" uid="uid://cqoucv46tspxt" path="res://assets/tileset/singles/terrain/grass_tile.png" id="14_hvubb"]
 [ext_resource type="Script" uid="uid://cuvyu4ppqqjha" path="res://level/state_machine/level_state_machine.gd" id="14_v5j5c"]
 [ext_resource type="Script" uid="uid://crka775kceip5" path="res://level/state_machine/draw_card_state.gd" id="15_5pxul"]
+[ext_resource type="Texture2D" uid="uid://bbidhb8om86kb" path="res://assets/tileset/singles/terrain/water_tile.png" id="15_aoqsc"]
 [ext_resource type="Texture2D" uid="uid://lon8aolxhdc5" path="res://assets/tileset/singles/streets/street_turn.png" id="16_ilwjd"]
+[ext_resource type="Texture2D" uid="uid://i8tytada0txn" path="res://assets/tileset/singles/terrain/swamp_grass_tile.png" id="16_mleqk"]
 [ext_resource type="Texture2D" uid="uid://b8a4bn58iil4e" path="res://assets/tileset/singles/streets/street_t_junction.png" id="17_y3bce"]
 [ext_resource type="Texture2D" uid="uid://c8uete2pck4pq" path="res://assets/tileset/singles/streets/street_parking.png" id="18_u3yai"]
 [ext_resource type="Script" uid="uid://btts8e71u2m77" path="res://level/state_machine/scoring_phase_state.gd" id="19_ait7k"]
@@ -31,9 +35,27 @@ texture = ExtResource("4_km5ld")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6btg4"]
+texture = ExtResource("14_hvubb")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl4om"]
+texture = ExtResource("15_aoqsc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtg4e"]
+texture = ExtResource("16_mleqk")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_f2txt"]
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_8b0r0")
+sources/1 = SubResource("TileSetAtlasSource_6btg4")
+sources/2 = SubResource("TileSetAtlasSource_sl4om")
+sources/3 = SubResource("TileSetAtlasSource_dtg4e")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6smj"]
 texture = ExtResource("5_i2t4f")
@@ -106,6 +128,7 @@ generate_random_city = true
 [node name="City" type="Node2D" parent="." node_paths=PackedStringArray("tilemaps")]
 script = ExtResource("2_vonw3")
 tilemaps = [NodePath("TileMapLayer Ground"), NodePath("TileMapLayer Buildings"), NodePath("TileMapLayer Objects"), NodePath("TileMapLayer Roads")]
+asphalt_tile = ExtResource("13_aoqsc")
 
 [node name="TileMapLayer Ground" type="TileMapLayer" parent="City"]
 tile_set = SubResource("TileSet_f2txt")
