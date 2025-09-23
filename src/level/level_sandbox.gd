@@ -32,17 +32,33 @@ func generate_deck():
 func generate_city():
 	var city: City= Global.city
 
-	var dirt_tile: FloorTile= load("uid://b316rjq10i810")
+	var grass_tile: FloorTile= load("uid://bxxs348bao3ex")
+	var swamp_tile: FloorTile= load("uid://cxqei5n8ibjfn")
+	var asphalt_tile: FloorTile= load("uid://b316rjq10i810")
+	var river_tile: FloorTile= load("uid://cjvucgx3b5qh7")
+
 	var house_tile: BuildingTile= load("uid://ccsx6qxw27xhb")
 	var factory_tile: BuildingTile= load("uid://c1mueqekg8h8x")
 
-	var size:= 9
+	var size:= 10
 
 	for x in size:
 		for y in size:
 			var tile:= Vector2i(x, y) - Vector2i.ONE * size / 2
-			city.place_tile(dirt_tile, tile) 
-			if randf() < 0.1:
+			if RngUtils.chance100(5):
+				city.place_tile(swamp_tile, tile)
+			else:
+				city.place_tile(grass_tile, tile) 
+
+	if RngUtils.chance100(100):
+		var x= randi() % size
+		for y in size:
+			city.place_tile(river_tile, Vector2i(x, y) - Vector2i.ONE * size / 2)
+
+	for x in size:
+		for y in size:
+			var tile:= Vector2i(x, y) - Vector2i.ONE * size / 2
+			if RngUtils.chance100(5):
 				city.place_tile(house_tile, tile)
-			elif randf() < 0.05:
+			elif RngUtils.chance100(1):
 				city.place_tile(factory_tile, tile)
