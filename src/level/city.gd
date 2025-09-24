@@ -103,14 +103,26 @@ func get_road_tiles()-> Array[Vector2i]:
 	return get_tilemap(TileLayer.ROADS).get_used_cells()
 
 
-func get_building_tiles()-> Array[Vector2i]:
-	return get_tilemap(TileLayer.BUILDINGS).get_used_cells()
+func get_road(tile: Vector2i)-> PlaceableTile:
+	if not tile in get_road_tiles():
+		return null
+	return GameData.source_id_to_road_tile[get_tilemap(TileLayer.ROADS).get_cell_source_id(tile)]
 
 
 func get_road_connections(tile: Vector2i)-> Array:
 	if not road_connections.has(tile):
 		return []
 	return road_connections[tile]
+
+
+func get_building_tiles()-> Array[Vector2i]:
+	return get_tilemap(TileLayer.BUILDINGS).get_used_cells()
+
+
+func get_building(tile: Vector2i)-> BuildingTile:
+	if not tile in get_building_tiles():
+		return null
+	return GameData.source_id_to_building_tile[get_tilemap(TileLayer.BUILDINGS).get_cell_source_id(tile)]
 
 
 func get_global_canvas_transform()-> Vector2:
