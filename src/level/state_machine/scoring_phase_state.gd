@@ -13,8 +13,11 @@ func score_city():
 	var road_access_dict: Dictionary
 	for tile_pos in city.get_road_tiles():
 		#FloatingText.add(origin + city.get_position_from_tile(tile), "+1", 2.0, Color.GREEN, 30, false, true)
+		var road: PlaceableTile= city.get_road(tile_pos)
 		
-		trigger_score(tile_pos, 1)
+		if road.auto_scores:
+			trigger_score(tile_pos, 1)
+		
 		for pos in Utils.get_neighbor_tiles(tile_pos, false): 
 			road_access_dict[pos]= true
 		

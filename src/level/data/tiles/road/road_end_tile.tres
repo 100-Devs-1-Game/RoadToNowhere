@@ -8,6 +8,7 @@ script = ExtResource("2_nhtpq")
 card_icon = ExtResource("1_vxxwf")
 can_rotate = true
 road_connections = Array[Vector2i]([Vector2i(-1, 0)])
+auto_scores = false
 name = "Road End"
 description = ""
 target_tilemap = 3
