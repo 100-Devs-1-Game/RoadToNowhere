@@ -49,9 +49,14 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 			for connection in road.road_connections:
 				if not road_connections.has(tile_pos):
 					road_connections[tile_pos]= []
-				var rotated_connection: Vector2i= Vector2(connection).rotated(tile_rot)
+				prints("rot", tile_rot)
+				prints("from", connection)
+				var vec_rot: Vector2= Vector2(connection).rotated(tile_rot)
+				prints("to vec2 rotated", vec_rot)
+				var rotated_connection: Vector2i= vec_rot.round()
 				prints("Connection", rotated_connection)
 				road_connections[tile_pos].append(rotated_connection)
+
 
 func get_tilemap(type: TileLayer)-> TileMapLayer:
 	return tilemaps[int(type)]
