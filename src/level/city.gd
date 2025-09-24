@@ -6,6 +6,8 @@ enum TileLayer { GROUND, BUILDINGS, OBJECTS, ROADS }
 @export var tilemaps: Array[TileMapLayer]
 @export var asphalt_tile: FloorTile
 
+var road_connections: Dictionary
+
 
 
 func _ready() -> void:
@@ -16,8 +18,15 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 	var target_tilemap: TileLayer= tile_to_place.target_tilemap
 	var tilemap: TileMapLayer= get_tilemap(target_tilemap)
 	
+	prints("Tile rot", tile_rot)
+	tile_rot= wrapf(tile_rot, 0.0, 2 * PI)
+	prints("Tile rot wrapped", tile_rot)
+	
 	var tile_alternate: int= 0
-	match int(rad_to_deg(tile_rot)):
+	var tile_rot_deg: int= round(rad_to_deg(tile_rot))
+	prints("Tile rot deg", tile_rot_deg)
+
+	match int(tile_rot_deg):
 		90:
 			tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_H
 		180:
@@ -34,7 +43,15 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 				if is_water_tile(neighbor_pos):
 					continue
 				place_tile(asphalt_tile, neighbor_pos)
- 
+		elif target_tilemap == TileLayer.ROADS:
+			assert(tile_to_place is PlaceableTile)
+			var road: PlaceableTile= tile_to_place
+			for connection in road.road_connections:
+				if not road_connections.has(tile_pos):
+					road_connections[tile_pos]= []
+				var rotated_connection: Vector2i= Vector2(connection).rotated(tile_rot)
+				prints("Connection", rotated_connection)
+				road_connections[tile_pos].append(rotated_connection)
 
 func get_tilemap(type: TileLayer)-> TileMapLayer:
 	return tilemaps[int(type)]

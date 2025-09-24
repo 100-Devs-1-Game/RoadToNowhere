@@ -5,7 +5,7 @@ extends BaseTile
 # but may be easier to store redundantly than to extract
 @export var card_icon: Texture2D
 @export var can_rotate: bool= true
-
+@export var road_connections: Array[Vector2i]
 
 
 func can_place_at(tile: Vector2i)-> bool:

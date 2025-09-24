@@ -37,6 +37,7 @@ func on_unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			var city: City= Global.city
+			prints("TileSprite rotation", tile_sprite.rotation)
 			city.place_tile(tile_to_place, city.get_mouse_tile(), tile_sprite.rotation)
 			finished.emit()
 	elif event.is_action("rotate_left") and tile_to_place.can_rotate:
@@ -47,6 +48,7 @@ func on_unhandled_input(event: InputEvent):
 
 func rotate(dir: int):
 	tile_sprite.rotation+= dir * PI / 2
+	prints("TileSprite rotated", tile_sprite.rotation)
 
 
 func update_sprite_texture():

@@ -6,6 +6,8 @@
 [resource]
 script = ExtResource("1_fn0d0")
 card_icon = ExtResource("1_s45pl")
+can_rotate = true
+road_connections = Array[Vector2i]([Vector2i(1, 0), Vector2i(-1, 0)])
 name = "Road"
 description = ""
 target_tilemap = 3
