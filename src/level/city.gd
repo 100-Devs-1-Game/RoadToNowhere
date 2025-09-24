@@ -99,10 +99,23 @@ func get_source_id(tile: Vector2i, tile_layer: TileLayer)-> int:
 	return tile_map.get_cell_source_id(tile)
 
 
+func get_road_tiles()-> Array[Vector2i]:
+	return get_tilemap(TileLayer.ROADS).get_used_cells()
+
+
+func get_building_tiles()-> Array[Vector2i]:
+	return get_tilemap(TileLayer.BUILDINGS).get_used_cells()
+
+
 func get_road_connections(tile: Vector2i)-> Array:
 	if not road_connections.has(tile):
 		return []
 	return road_connections[tile]
+
+
+func get_global_canvas_transform()-> Vector2:
+	return tilemaps[0].get_global_transform_with_canvas().origin	
+
 
 func is_water_tile(tile: Vector2i)-> bool:
 	var floor_tile: FloorTile= get_floor_tile(tile)
