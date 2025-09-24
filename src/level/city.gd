@@ -99,6 +99,11 @@ func get_source_id(tile: Vector2i, tile_layer: TileLayer)-> int:
 	return tile_map.get_cell_source_id(tile)
 
 
+func get_road_connections(tile: Vector2i)-> Array:
+	if not road_connections.has(tile):
+		return []
+	return road_connections[tile]
+
 func is_water_tile(tile: Vector2i)-> bool:
 	var floor_tile: FloorTile= get_floor_tile(tile)
 	if not floor_tile:
