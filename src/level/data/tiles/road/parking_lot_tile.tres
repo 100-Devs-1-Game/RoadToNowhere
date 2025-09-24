@@ -13,4 +13,5 @@ name = "Parking"
 description = ""
 target_tilemap = 3
 source_id = 5
+custom_scoring = 1
 metadata/_custom_type_script = "uid://xpgmo5hooyr3"

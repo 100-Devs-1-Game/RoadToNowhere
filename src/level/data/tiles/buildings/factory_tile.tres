@@ -8,4 +8,5 @@ name = "Factory"
 description = ""
 target_tilemap = 1
 source_id = 1
+custom_scoring = 2
 metadata/_custom_type_script = "uid://46bt6jaqmwsn"

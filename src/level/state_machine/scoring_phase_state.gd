@@ -1,6 +1,8 @@
 class_name ScoringPhaseState
 extends StateMachineState
 
+const SCORE_DISPLAY_INTERVAL= 0.5
+
 
 
 func on_enter():
@@ -18,6 +20,8 @@ func score_city():
 		if road.auto_scores:
 			trigger_score(tile_pos, 1)
 		
+		road.run_custom_scoring(self, tile_pos)
+		
 		for pos in Utils.get_neighbor_tiles(tile_pos, false): 
 			road_access_dict[pos]= true
 		
@@ -27,13 +31,18 @@ func score_city():
 				#FloatingText.add(origin + city.get_position_from_tile(tile) + Vector2(connection) * 32, "-1", 2.0, Color.RED, 30, false, true)
 				trigger_score(tile_pos, -1, Vector2(connection) * 32)
 		
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
 	for tile_pos in city.get_building_tiles():
+		var building: BuildingTile= city.get_building(tile_pos)
+
 		if road_access_dict.has(tile_pos):
 			#FloatingText.add(origin + city.get_position_from_tile(tile), "+5", 2.0, Color.GREEN, 30, false, true)
 			trigger_score(tile_pos, 1)
-		await get_tree().create_timer(0.5).timeout
+
+		building.run_custom_scoring(self, tile_pos)
+
+		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
 
 func _input(event: InputEvent) -> void:
