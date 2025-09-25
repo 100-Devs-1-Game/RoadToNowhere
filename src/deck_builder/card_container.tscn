@@ -36,6 +36,7 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/up_down_buttons_separator = SubResource("StyleBoxFlat_jobp7")
@@ -49,3 +50,9 @@ theme_override_styles/up_background = SubResource("StyleBoxFlat_vknxc")
 value = 1.0
 rounded = true
 alignment = 1
+
+[node name="Button Buy" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/Button Buy" to="." method="_on_button_buy_pressed"]
