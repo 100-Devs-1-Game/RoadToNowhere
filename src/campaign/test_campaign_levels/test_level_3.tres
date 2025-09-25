@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_7mklf")
-seed = 123
-difficulty = 0
-size = Vector2i(7, 7)
+seed = 789
+difficulty = 10
+size = Vector2i(10, 10)
 metadata/_custom_type_script = "uid://b4dhmiu21q5o7"
