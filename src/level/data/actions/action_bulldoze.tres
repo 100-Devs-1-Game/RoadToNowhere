@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ActionBulldoze" load_steps=4 format=3 uid="uid://dprs8lmpdwnlm"]
+
+[ext_resource type="Script" uid="uid://l7y20q3ohb48" path="res://level/actions/action_bulldoze.gd" id="1_a5c0f"]
+[ext_resource type="Texture2D" uid="uid://dd7imbuk2nmbq" path="res://assets/card/icon_bulldozer.png" id="1_u86g4"]
+[ext_resource type="Resource" uid="uid://ekn47hryloya" path="res://level/data/tiles/objects/rubble_tile.tres" id="2_ipxrq"]
+
+[resource]
+script = ExtResource("1_a5c0f")
+rubble_tile = ExtResource("2_ipxrq")
+display_name = "Bulldozer"
+icon = ExtResource("1_u86g4")
+metadata/_custom_type_script = "uid://l7y20q3ohb48"

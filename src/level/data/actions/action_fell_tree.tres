@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ActionFellTree" load_steps=4 format=3 uid="uid://eebfb6j5log"]
+
+[ext_resource type="Texture2D" uid="uid://c6j72g7l2n6n6" path="res://assets/card/icon_axe.png" id="1_dk4lp"]
+[ext_resource type="Script" uid="uid://bfi8as8cnf7y4" path="res://level/actions/action_fell_tree.gd" id="1_wefar"]
+[ext_resource type="Resource" uid="uid://3yoluykrat12" path="res://level/data/tiles/objects/tree_tile.tres" id="3_a6wlh"]
+
+[resource]
+script = ExtResource("1_wefar")
+tree_tile = ExtResource("3_a6wlh")
+display_name = "Fell Tree"
+icon = ExtResource("1_dk4lp")
+metadata/_custom_type_script = "uid://bfi8as8cnf7y4"
