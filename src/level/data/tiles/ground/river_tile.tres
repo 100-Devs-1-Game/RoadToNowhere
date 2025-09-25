@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FloorTile" load_steps=2 format=3 uid="uid://cjvucgx3b5qh7"]
 
-[ext_resource type="Script" uid="uid://kel1fjggtuht" path="res://level/floor_tile.gd" id="1_ovi5u"]
+[ext_resource type="Script" uid="uid://kel1fjggtuht" path="res://level/tiles/floor_tile.gd" id="1_ovi5u"]
 
 [resource]
 script = ExtResource("1_ovi5u")
