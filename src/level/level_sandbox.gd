@@ -25,7 +25,10 @@ func generate_deck():
 	var size:= card_pool.size()
 	var deck:= Deck.new()
 	for i in randi_range(size * min_deck_factor, size * max_deck_factor):
-		deck.add_card(card_pool.pick_random())
+		var card_data: CardData= card_pool.pick_random()
+		deck.add_card(card_data)
+		card_data.unlocked= true
+	
 	level.deck= deck
 	level.build_deck()
 

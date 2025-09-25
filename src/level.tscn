@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=50 format=3 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -12,8 +12,10 @@
 [ext_resource type="Resource" uid="uid://dl7hf28qrlk6s" path="res://cards/data/card_turn.tres" id="7_6btg4"]
 [ext_resource type="Texture2D" uid="uid://bgeqdl0pblrav" path="res://assets/tileset/singles/streets/street_dead_end.png" id="8_aicyk"]
 [ext_resource type="Resource" uid="uid://cbp5qsnidyls6" path="res://cards/data/card_excavate.tres" id="8_sl4om"]
+[ext_resource type="Resource" uid="uid://dy575ecb4nihq" path="res://cards/data/card_t_junction.tres" id="9_6btg4"]
 [ext_resource type="PackedScene" uid="uid://b3er8fw54mg2c" path="res://cards/empty_card.tscn" id="9_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://ped0aiqybjgm" path="res://cards/card.tscn" id="10_8cye3"]
+[ext_resource type="Resource" uid="uid://slteqruj3okk" path="res://cards/data/card_parking.tres" id="10_sl4om"]
 [ext_resource type="Texture2D" uid="uid://c66q4oce54gud" path="res://assets/tileset/singles/buildings/factory.png" id="12_ait7k"]
 [ext_resource type="Resource" uid="uid://b316rjq10i810" path="res://level/data/tiles/ground/asphalt_tile.tres" id="13_aoqsc"]
 [ext_resource type="Script" uid="uid://cvme5yewc08uu" path="res://level/state_machine/place_tile_state.gd" id="14_h6smj"]
@@ -135,9 +137,8 @@ deck_card_offset = null
 [node name="Sandbox" type="Node" parent="."]
 script = ExtResource("2_2orkt")
 generate_random_deck = true
-card_pool = Array[ExtResource("5_aoqsc")]([ExtResource("6_mleqk"), ExtResource("7_6btg4"), ExtResource("8_sl4om")])
-min_deck_factor = 1
-max_deck_factor = 1
+card_pool = Array[ExtResource("5_aoqsc")]([ExtResource("6_mleqk"), ExtResource("7_6btg4"), ExtResource("8_sl4om"), ExtResource("9_6btg4"), ExtResource("10_sl4om")])
+max_deck_factor = 4
 generate_random_city = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
