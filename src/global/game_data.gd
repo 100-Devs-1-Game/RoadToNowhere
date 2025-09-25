@@ -30,3 +30,6 @@ func build_tile_dict(dir: String, dict: Dictionary):
 func build_card_pool():
 	for file in ResourceLoader.list_directory(cards_dir):
 		card_pool.append(load(cards_dir + "/" + file))
+	
+	card_pool.sort_custom(func(a: CardData, b: CardData):\
+		return a.cost < b.cost)

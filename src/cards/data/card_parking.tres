@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_eu4pb")
 tile = ExtResource("2_ow0oo")
-cost = 0
+cost = 40
 unlocked = false
 metadata/_custom_type_script = "uid://bdtfng2lo03gk"
