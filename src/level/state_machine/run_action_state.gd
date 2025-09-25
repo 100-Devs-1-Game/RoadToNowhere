@@ -3,6 +3,7 @@ extends StateMachineState
 
 var action: BaseAction
 var action_sprite:= Sprite2D.new()
+var can_execute: bool= false
 
 
 
@@ -24,9 +25,14 @@ func on_process(delta: float) -> void:
 	var tile: Vector2i= city.get_mouse_tile()
 	if not city.is_in_bounds(tile):
 		action_sprite.hide()
+		can_execute= false
 		return
 	
 	action_sprite.position= city.get_position_from_tile(tile)
+
+	can_execute= action.can_execute(tile)
+	action_sprite.modulate= Color.WHITE if can_execute else Color.ORANGE_RED
+
 	action_sprite.show()
 
 
@@ -35,7 +41,7 @@ func on_unhandled_input(event: InputEvent):
 		return
 		
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT and can_execute:
 			action.execute(Global.city.get_mouse_tile())
 			finished.emit()
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
