@@ -23,9 +23,9 @@ func shuffle():
 	cards.shuffle()
 
 
-func pop()-> PlaceableTile:
+func pop()-> CardData:
 	var card: DeckCard= cards.pop_back()
-	return card.tile
+	return card.data
 
 
 func get_size()-> int:

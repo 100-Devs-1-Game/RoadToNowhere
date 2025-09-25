@@ -4,6 +4,6 @@ extends PanelContainer
 @onready var card: Card = %Card
 
 
-func init(tile: PlaceableTile):
-	card.init(tile)
+func init(data: CardData):
+	card.init(data)
 	

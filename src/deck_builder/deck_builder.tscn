@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0wae6mlpwlsv"]
+[gd_scene load_steps=4 format=3 uid="uid://c0wae6mlpwlsv"]
 
 [ext_resource type="Script" uid="uid://b00307e78nh58" path="res://deck_builder/deck_builder.gd" id="1_j1mvi"]
 [ext_resource type="PackedScene" uid="uid://cd1ecb7pjg7cl" path="res://deck_builder/card_container.tscn" id="1_vjh6l"]
-[ext_resource type="Script" uid="uid://xpgmo5hooyr3" path="res://level/placeable_tile.gd" id="3_jd04s"]
-[ext_resource type="Resource" uid="uid://dxebpvd0s2ljr" path="res://level/data/tiles/road/road_straight_tile.tres" id="4_hn83w"]
-[ext_resource type="Resource" uid="uid://rw0e4nvy7q8y" path="res://level/data/tiles/road/road_intersection_tile.tres" id="5_jcwdr"]
-[ext_resource type="Resource" uid="uid://cj8mrl7b8yrj2" path="res://level/data/tiles/road/road_end_tile.tres" id="6_i1hhj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1mvi"]
 bg_color = Color(0.539979, 0.634553, 0.490801, 1)
@@ -19,7 +15,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j1mvi")
 script = ExtResource("1_j1mvi")
 card_container_scene = ExtResource("1_vjh6l")
-card_pool = Array[ExtResource("3_jd04s")]([ExtResource("4_hn83w"), ExtResource("5_jcwdr"), ExtResource("6_i1hhj")])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

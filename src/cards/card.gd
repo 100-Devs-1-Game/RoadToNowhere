@@ -9,14 +9,14 @@ signal discard
 @onready var texture_rect: TextureRect = %TextureRect
 
 
-var tile: PlaceableTile
+var data: CardData
 
 
-func init(_tile: PlaceableTile):
-	tile= _tile
-	if tile:
-		title.text= tile.name
-		texture_rect.texture= tile.card_icon
+func init(_data: CardData):
+	data= _data
+	title.text= data.get_display_name()
+	if data.unlocked:
+		texture_rect.texture= data.get_icon()
 	else:
 		texture_rect.texture= default_texture
 

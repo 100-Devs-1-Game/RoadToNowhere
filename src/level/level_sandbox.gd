@@ -1,7 +1,7 @@
 extends Node
 
 @export var generate_random_deck: bool= false
-@export var card_pool: Array[PlaceableTile]
+@export var card_pool: Array[CardData]
 @export var min_deck_factor: int= 2
 @export var max_deck_factor: int= 5
 

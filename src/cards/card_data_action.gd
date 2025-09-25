@@ -5,5 +5,9 @@ extends CardData
 
 
 
+func get_display_name()-> String:
+	return action.display_name
+
+
 func get_icon()-> Texture2D:
 	return action.icon

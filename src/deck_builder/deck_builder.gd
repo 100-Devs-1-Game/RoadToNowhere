@@ -9,9 +9,9 @@ extends PanelContainer
 
 func _ready() -> void:
 	for i in 10:
-		var tile: PlaceableTile
-		if i < Global.card_pool.size():
-			tile= Global.card_pool[i]
-		var card_container: CardContainer= card_container_scene.instantiate()
-		display_container.add_child(card_container)
-		card_container.init(tile)
+		var card: CardData
+		if i < GameData.card_pool.size():
+			card= GameData.card_pool[i]
+			var card_container: CardContainer= card_container_scene.instantiate()
+			display_container.add_child(card_container)
+			card_container.init(card)
