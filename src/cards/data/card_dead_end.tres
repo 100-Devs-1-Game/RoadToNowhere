@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardDataPlaceable" load_steps=3 format=3 uid="uid://cjg2e6s76vi32"]
+
+[ext_resource type="Script" uid="uid://bdtfng2lo03gk" path="res://cards/card_data_placeable.gd" id="1_ni8bs"]
+[ext_resource type="Resource" uid="uid://cj8mrl7b8yrj2" path="res://level/data/tiles/road/road_end_tile.tres" id="2_voo25"]
+
+[resource]
+script = ExtResource("1_ni8bs")
+tile = ExtResource("2_voo25")
+cost = 0
+unlocked = true
+metadata/_custom_type_script = "uid://bdtfng2lo03gk"

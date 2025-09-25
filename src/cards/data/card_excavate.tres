@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardDataAction" load_steps=2 format=3 uid="uid://cbp5qsnidyls6"]
+
+[ext_resource type="Script" uid="uid://dl8gohwndxyg6" path="res://cards/card_data_action.gd" id="1_dg8tf"]
+
+[resource]
+script = ExtResource("1_dg8tf")
+cost = 0
+unlocked = false
+metadata/_custom_type_script = "uid://dl8gohwndxyg6"
