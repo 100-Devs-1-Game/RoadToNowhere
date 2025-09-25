@@ -1,18 +1,18 @@
 class_name Deck
 
 class DeckCard:
-	var tile: PlaceableTile
+	var data: CardData
 	
-	func _init(_tile: PlaceableTile):
-		tile= _tile
+	func _init(_data: CardData):
+		data= _data
 
 
 var cards: Array[DeckCard]
 
 
 
-func add_card(tile: PlaceableTile):
-	cards.append(DeckCard.new(tile))
+func add_card(data: CardData):
+	cards.append(DeckCard.new(data))
 
 
 func clear():
