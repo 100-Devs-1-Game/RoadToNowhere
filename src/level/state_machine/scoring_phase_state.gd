@@ -3,6 +3,8 @@ extends StateMachineState
 
 const SCORE_DISPLAY_INTERVAL= 0.5
 
+var score: int
+
 
 
 func on_enter():
@@ -10,6 +12,8 @@ func on_enter():
 
 
 func score_city():
+	score= 0
+	
 	var city: City= Global.city
 
 	var road_access_dict: Dictionary
@@ -44,13 +48,15 @@ func score_city():
 
 		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
+	Player.update_level_score(score)
+
 
 func _input(event: InputEvent) -> void:
 	if not event.is_pressed():
 		return
 	
 	if event is InputEventKey:
-		if event.keycode == KEY_F1:
+		if event.keycode == KEY_F1 and OS.is_debug_build():
 			score_city()
 
 
@@ -65,4 +71,5 @@ func trigger_score(tile: Vector2i, amount: int, offset: Vector2= Vector2.ZERO):
 		color= Color.RED
 	
 	FloatingText.add(origin + city.get_position_from_tile(tile) + offset, Utils.number_with_sign(amount), 2.0, color, 30, false, true)
-	
+
+	score+= amount
