@@ -4,10 +4,11 @@
 
 [resource]
 script = ExtResource("1_ovi5u")
-can_build_on = true
+can_build_on = false
 is_water = true
 name = "River"
 description = ""
 target_tilemap = 0
 source_id = 2
+custom_scoring = 0
 metadata/_custom_type_script = "uid://kel1fjggtuht"

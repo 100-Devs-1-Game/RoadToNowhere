@@ -3,6 +3,8 @@ extends StateMachineState
 
 var tile_to_place: PlaceableTile
 var tile_sprite:= Sprite2D.new()
+var can_place_tile: bool= false
+
 
 
 func _ready() -> void:
@@ -24,9 +26,14 @@ func on_process(delta: float) -> void:
 	var tile: Vector2i= city.get_mouse_tile()
 	if not city.is_in_bounds(tile):
 		tile_sprite.hide()
+		can_place_tile= false
 		return
 	
 	tile_sprite.position= city.get_position_from_tile(tile)
+	
+	can_place_tile= city.can_build_tile_at(tile)
+	tile_sprite.modulate= Color.WHITE if can_place_tile else Color.ORANGE_RED
+
 	tile_sprite.show()
 
 
@@ -35,7 +42,7 @@ func on_unhandled_input(event: InputEvent):
 		return
 		
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT and can_place_tile:
 			var city: City= Global.city
 			prints("TileSprite rotation", tile_sprite.rotation)
 			city.place_tile(tile_to_place, city.get_mouse_tile(), tile_sprite.rotation)

@@ -58,6 +58,23 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 				road_connections[tile_pos].append(rotated_connection)
 
 
+func can_build_tile_at(tile: Vector2i)-> bool:
+	if not is_in_bounds(tile):
+		return false
+	if tile in get_road_tiles():
+		return false
+	if tile in get_building_tiles():
+		return false
+	if tile in get_object_tiles():
+		return false
+	
+	var floor_tile: FloorTile= get_floor_tile(tile)
+	if not floor_tile.can_build_on:
+		return false
+
+	return true
+
+
 func get_tilemap(type: TileLayer)-> TileMapLayer:
 	return tilemaps[int(type)]
 
