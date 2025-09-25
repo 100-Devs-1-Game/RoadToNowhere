@@ -13,4 +13,5 @@ name = "Road End"
 description = ""
 target_tilemap = 3
 source_id = 2
+custom_scoring = 0
 metadata/_custom_type_script = "uid://xpgmo5hooyr3"
