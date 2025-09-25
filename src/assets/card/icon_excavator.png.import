@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6j72g7l2n6n6"
-path="res://.godot/imported/icon_axe.png-aece9a284c5e7d83dac90317ca2b93d4.ctex"
+uid="uid://bp00wmr84re6d"
+path="res://.godot/imported/icon_excavator.png-2119f01b48579e1274eff5bc640c5f5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/singles/misc/icon_axe.png"
-dest_files=["res://.godot/imported/icon_axe.png-aece9a284c5e7d83dac90317ca2b93d4.ctex"]
+source_file="res://assets/card/icon_excavator.png"
+dest_files=["res://.godot/imported/icon_excavator.png-2119f01b48579e1274eff5bc640c5f5d.ctex"]
 
 [params]
 
