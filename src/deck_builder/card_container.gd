@@ -15,7 +15,10 @@ func init(data: CardData):
 	button_buy.visible= not data.unlocked
 	if button_buy.visible:
 		button_buy.text= str("$", data.cost)
+		button_buy.disabled= Player.money < data.cost
 
 
 func _on_button_buy_pressed() -> void:
+	card.data.unlocked= true
+	Player.buy(card.data.cost)
 	buy_card.emit(card.data)
