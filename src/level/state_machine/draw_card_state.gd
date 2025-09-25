@@ -1,7 +1,7 @@
 class_name DrawCardState
 extends StateMachineState
 
-signal drawn_card(tile_to_place: PlaceableTile)
+signal drawn_card(tile_to_place: CardData)
 
 
 func on_card_drawn():

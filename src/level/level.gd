@@ -25,7 +25,7 @@ func build_deck():
 		card.activated.connect(state_machine.draw_card.on_card_drawn)
 
 
-func draw_card()-> PlaceableTile:
+func draw_card()-> CardData:
 	var top_card_node: Control= get_top_deck_card()
 	var last_pos: Vector2= top_card_node.position
 	top_card_node.queue_free()
@@ -33,7 +33,7 @@ func draw_card()-> PlaceableTile:
 	ui_deck.add_child(card)
 	card.position= last_pos
 	card.init(deck.pop())
-	return card.tile
+	return card.data
 
 
 func pop_deck():
