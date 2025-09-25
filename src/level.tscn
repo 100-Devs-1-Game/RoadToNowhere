@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=44 format=3 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://btts8e71u2m77" path="res://level/state_machine/scoring_phase_state.gd" id="19_ait7k"]
 [ext_resource type="Texture2D" uid="uid://dxtyeav4f0dkp" path="res://assets/tileset/singles/misc/rubble.png" id="20_6btg4"]
 [ext_resource type="Texture2D" uid="uid://cbywdwbc0akg8" path="res://assets/tileset/singles/misc/tree_red.png" id="21_sl4om"]
+[ext_resource type="Script" uid="uid://0owcm3vhau8t" path="res://level/state_machine/run_action_state.gd" id="24_fj6e6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8b0r0"]
 texture = ExtResource("4_km5ld")
@@ -125,6 +126,7 @@ sources/5 = SubResource("TileSetAtlasSource_yjxuc")
 script = ExtResource("1_u52ul")
 empty_card_scene = ExtResource("9_i2t4f")
 card_scene = ExtResource("10_8cye3")
+deck_card_offset = null
 
 [node name="Sandbox" type="Node" parent="."]
 script = ExtResource("2_2orkt")
@@ -162,6 +164,9 @@ script = ExtResource("15_5pxul")
 
 [node name="Place Tile" type="Node" parent="State Machine"]
 script = ExtResource("14_h6smj")
+
+[node name="Run action" type="Node" parent="State Machine"]
+script = ExtResource("24_fj6e6")
 
 [node name="Scoring Phase" type="Node" parent="State Machine"]
 script = ExtResource("19_ait7k")
