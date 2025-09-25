@@ -7,4 +7,5 @@ script = ExtResource("1_0aco7")
 buildings_tiles_dir = "res://level/data/tiles/buildings"
 ground_tiles_dir = "res://level/data/tiles/ground"
 road_tiles_dir = "res://level/data/tiles/road"
+object_tiles_dir = "res://level/data/tiles/objects"
 cards_dir = "res://cards/data"

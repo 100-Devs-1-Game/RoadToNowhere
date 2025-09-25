@@ -125,6 +125,16 @@ func get_building(tile: Vector2i)-> BuildingTile:
 	return GameData.source_id_to_building_tile[get_tilemap(TileLayer.BUILDINGS).get_cell_source_id(tile)]
 
 
+func get_object_tiles()-> Array[Vector2i]:
+	return get_tilemap(TileLayer.OBJECTS).get_used_cells()
+
+
+func get_object(tile: Vector2i)-> ObjectTile:
+	if not tile in get_object_tiles():
+		return null
+	return GameData.source_id_to_object_tile[get_tilemap(TileLayer.OBJECTS).get_cell_source_id(tile)]
+
+
 func get_global_canvas_transform()-> Vector2:
 	return tilemaps[0].get_global_transform_with_canvas().origin	
 

@@ -1,13 +1,17 @@
-[gd_scene load_steps=44 format=3 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=48 format=3 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
 [ext_resource type="Script" uid="uid://b4lwfor10ru25" path="res://level/city.gd" id="2_vonw3"]
 [ext_resource type="Texture2D" uid="uid://bfqdft0aljwnx" path="res://assets/tileset/singles/terrain/asphalt_tile.png" id="4_km5ld"]
+[ext_resource type="Script" uid="uid://dnkvdh7bp5y4i" path="res://cards/card_data.gd" id="5_aoqsc"]
 [ext_resource type="Texture2D" uid="uid://ce8nk8nek2syv" path="res://assets/tileset/singles/buildings/house.png" id="5_i2t4f"]
 [ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/streets/street_straight.png" id="6_8cye3"]
+[ext_resource type="Resource" uid="uid://hxycm2xbvokb" path="res://cards/data/card_straight_street.tres" id="6_mleqk"]
 [ext_resource type="Texture2D" uid="uid://c0glopjtk8rbr" path="res://assets/tileset/singles/streets/street_crossing.png" id="7_2orkt"]
+[ext_resource type="Resource" uid="uid://dl7hf28qrlk6s" path="res://cards/data/card_turn.tres" id="7_6btg4"]
 [ext_resource type="Texture2D" uid="uid://bgeqdl0pblrav" path="res://assets/tileset/singles/streets/street_dead_end.png" id="8_aicyk"]
+[ext_resource type="Resource" uid="uid://cbp5qsnidyls6" path="res://cards/data/card_excavate.tres" id="8_sl4om"]
 [ext_resource type="PackedScene" uid="uid://b3er8fw54mg2c" path="res://cards/empty_card.tscn" id="9_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://ped0aiqybjgm" path="res://cards/card.tscn" id="10_8cye3"]
 [ext_resource type="Texture2D" uid="uid://c66q4oce54gud" path="res://assets/tileset/singles/buildings/factory.png" id="12_ait7k"]
@@ -131,6 +135,7 @@ deck_card_offset = null
 [node name="Sandbox" type="Node" parent="."]
 script = ExtResource("2_2orkt")
 generate_random_deck = true
+card_pool = Array[ExtResource("5_aoqsc")]([ExtResource("6_mleqk"), ExtResource("7_6btg4"), ExtResource("8_sl4om")])
 min_deck_factor = 1
 max_deck_factor = 1
 generate_random_city = true

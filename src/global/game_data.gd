@@ -3,11 +3,13 @@ extends Node
 @export_dir var buildings_tiles_dir
 @export_dir var ground_tiles_dir
 @export_dir var road_tiles_dir
+@export_dir var object_tiles_dir
 @export_dir var cards_dir
 
 var source_id_to_building_tile: Dictionary
 var source_id_to_ground_tile: Dictionary
 var source_id_to_road_tile: Dictionary
+var source_id_to_object_tile: Dictionary
 
 var card_pool: Array[CardData]
 
@@ -17,6 +19,7 @@ func _ready() -> void:
 	build_tile_dict(buildings_tiles_dir, source_id_to_building_tile)
 	build_tile_dict(ground_tiles_dir, source_id_to_ground_tile)
 	build_tile_dict(road_tiles_dir, source_id_to_road_tile)
+	build_tile_dict(object_tiles_dir, source_id_to_object_tile)
 
 	build_card_pool()
 
