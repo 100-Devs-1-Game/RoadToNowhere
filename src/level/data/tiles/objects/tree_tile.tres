@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ObjectTile" load_steps=2 format=3 uid="uid://3yoluykrat12"]
+
+[ext_resource type="Script" uid="uid://dalviugrhmem8" path="res://level/object_tile.gd" id="1_w740w"]
+
+[resource]
+script = ExtResource("1_w740w")
+name = "Tree"
+description = ""
+target_tilemap = 2
+source_id = 1
+custom_scoring = 0
+metadata/_custom_type_script = "uid://dalviugrhmem8"

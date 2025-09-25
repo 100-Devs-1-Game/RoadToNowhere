@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="CardDataAction" load_steps=2 format=3 uid="uid://bamo4x1xaito7"]
+[gd_resource type="Resource" script_class="CardDataAction" load_steps=3 format=3 uid="uid://bamo4x1xaito7"]
 
 [ext_resource type="Script" uid="uid://dl8gohwndxyg6" path="res://cards/card_data_action.gd" id="1_iatru"]
+[ext_resource type="Resource" uid="uid://eebfb6j5log" path="res://level/data/actions/action_fell_tree.tres" id="1_l4j7l"]
 
 [resource]
 script = ExtResource("1_iatru")
+action = ExtResource("1_l4j7l")
 cost = 0
 unlocked = false
 metadata/_custom_type_script = "uid://dl8gohwndxyg6"

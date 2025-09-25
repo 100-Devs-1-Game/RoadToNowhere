@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=50 format=3 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://b8a4bn58iil4e" path="res://assets/tileset/singles/streets/street_t_junction.png" id="17_y3bce"]
 [ext_resource type="Texture2D" uid="uid://c8uete2pck4pq" path="res://assets/tileset/singles/streets/street_parking.png" id="18_u3yai"]
 [ext_resource type="Script" uid="uid://btts8e71u2m77" path="res://level/state_machine/scoring_phase_state.gd" id="19_ait7k"]
+[ext_resource type="Texture2D" uid="uid://dxtyeav4f0dkp" path="res://assets/tileset/singles/misc/rubble.png" id="20_6btg4"]
+[ext_resource type="Texture2D" uid="uid://cbywdwbc0akg8" path="res://assets/tileset/singles/misc/tree_red.png" id="21_sl4om"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8b0r0"]
 texture = ExtResource("4_km5ld")
@@ -71,6 +73,21 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_h6smj")
 sources/1 = SubResource("TileSetAtlasSource_42xju")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut2i6"]
+texture = ExtResource("20_6btg4")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0mnfp"]
+texture = ExtResource("21_sl4om")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qw2y7"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ut2i6")
+sources/1 = SubResource("TileSetAtlasSource_0mnfp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pxul"]
 texture = ExtResource("6_8cye3")
@@ -120,7 +137,8 @@ card_scene = ExtResource("10_8cye3")
 script = ExtResource("2_2orkt")
 generate_random_deck = true
 card_pool = Array[ExtResource("5_8b0r0")]([ExtResource("6_h6smj"), ExtResource("7_4c15r"), ExtResource("8_ait7k"), ExtResource("9_fj6e6"), ExtResource("10_2h3vt"), ExtResource("11_yjxuc")])
-max_deck_factor = 3
+min_deck_factor = 1
+max_deck_factor = 1
 generate_random_city = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -137,6 +155,7 @@ tile_set = SubResource("TileSet_f2txt")
 tile_set = SubResource("TileSet_v5j5c")
 
 [node name="TileMapLayer Objects" type="TileMapLayer" parent="City"]
+tile_set = SubResource("TileSet_qw2y7")
 
 [node name="TileMapLayer Roads" type="TileMapLayer" parent="City"]
 tile_set = SubResource("TileSet_ait7k")

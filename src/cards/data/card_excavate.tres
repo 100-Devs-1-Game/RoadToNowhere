@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="CardDataAction" load_steps=2 format=3 uid="uid://cbp5qsnidyls6"]
+[gd_resource type="Resource" script_class="CardDataAction" load_steps=3 format=3 uid="uid://cbp5qsnidyls6"]
 
 [ext_resource type="Script" uid="uid://dl8gohwndxyg6" path="res://cards/card_data_action.gd" id="1_dg8tf"]
+[ext_resource type="Resource" uid="uid://k5kquewsaoqb" path="res://level/data/actions/action_excavate.tres" id="1_xfysu"]
 
 [resource]
 script = ExtResource("1_dg8tf")
+action = ExtResource("1_xfysu")
 cost = 0
 unlocked = false
 metadata/_custom_type_script = "uid://dl8gohwndxyg6"
