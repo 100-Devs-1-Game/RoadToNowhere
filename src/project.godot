@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://global/global.gd"
 FloatingText="*res://global/floating_text/floating_text.tscn"
 GameData="*res://global/game_data.tscn"
+Player="*res://global/player.gd"
 
 [editor_plugins]
 
