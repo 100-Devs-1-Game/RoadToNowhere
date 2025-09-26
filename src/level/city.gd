@@ -155,17 +155,22 @@ func get_object(tile: Vector2i)-> ObjectTile:
 func get_description(tile: Vector2i)-> String:
 	var floor: FloorTile= get_floor_tile(tile)
 	var road: PlaceableTile= get_road(tile)
+	var building: Object= get_building(tile)
 	var object: Object= get_object(tile)
 	
 	var priority_tile: BaseTile
 	if road:
 		priority_tile= road
+	elif building:
+		priority_tile= building
 	elif object:
 		priority_tile= object
 	else:
 		priority_tile= floor
-		
-	return "%s\n%s" % [ priority_tile.name, priority_tile.description ]
+	
+	if priority_tile:
+		return "%s\n\n%s" % [ priority_tile.name, priority_tile.description ]
+	return ""
 
 
 func get_global_canvas_transform()-> Vector2:

@@ -211,7 +211,6 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
@@ -219,6 +218,7 @@ layout_mode = 2
 
 [node name="Label Description" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 text = "A lot of description text that is very long and describes a lot of things while being long and descriptive."
 autowrap_mode = 3
