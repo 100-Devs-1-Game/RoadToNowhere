@@ -8,6 +8,7 @@ extends Node2D
 
 @onready var ui_deck: Control = %Deck
 @onready var state_machine: LevelStateMachine = $"State Machine"
+@onready var label_description: Label = %"Label Description"
 
 var deck: Deck
 
@@ -40,9 +41,17 @@ func pop_deck():
 	get_top_deck_card().queue_free()
 
 
+func set_description(text: String):
+	label_description.text= text
+
+
 func get_top_deck_card():
 	return ui_deck.get_child(ui_deck.get_child_count() - 1)
 
 
 func is_deck_empty():
 	return deck.is_empty()
+
+
+func _on_button_help_toggled(toggled_on: bool) -> void:
+	state_machine.toggle_help_mode(toggled_on)

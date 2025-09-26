@@ -5,6 +5,7 @@ extends FiniteStateMachine
 @onready var place_tile: PlaceTileState = $"Place Tile"
 @onready var run_action: RunActionState = $"Run action"
 @onready var scoring_phase: ScoringPhaseState = $"Scoring Phase"
+@onready var help_mode: Node = $"Help Mode"
 
 
 
@@ -30,3 +31,15 @@ func on_card_placed():
 		change_state(scoring_phase)
 	else:
 		change_state(draw_card)
+
+
+func toggle_help_mode(toggle: bool):
+	if current_state == scoring_phase:
+		return
+
+	if toggle:
+		change_state(help_mode)
+	else:
+		var return_to: StateMachineState= previous_state
+		change_state(return_to)
+		

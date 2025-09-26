@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=51 format=3 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dxtyeav4f0dkp" path="res://assets/tileset/singles/misc/rubble.png" id="20_6btg4"]
 [ext_resource type="Texture2D" uid="uid://cbywdwbc0akg8" path="res://assets/tileset/singles/misc/tree_red.png" id="21_sl4om"]
 [ext_resource type="Script" uid="uid://0owcm3vhau8t" path="res://level/state_machine/run_action_state.gd" id="24_fj6e6"]
+[ext_resource type="Script" uid="uid://bhnkxgwlsjki" path="res://level/state_machine/help_mode_state.gd" id="32_sl4om"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8b0r0"]
 texture = ExtResource("4_km5ld")
@@ -132,7 +133,6 @@ sources/5 = SubResource("TileSetAtlasSource_yjxuc")
 script = ExtResource("1_u52ul")
 empty_card_scene = ExtResource("9_i2t4f")
 card_scene = ExtResource("10_8cye3")
-deck_card_offset = null
 
 [node name="Sandbox" type="Node" parent="."]
 script = ExtResource("2_2orkt")
@@ -177,6 +177,9 @@ script = ExtResource("24_fj6e6")
 [node name="Scoring Phase" type="Node" parent="State Machine"]
 script = ExtResource("19_ait7k")
 
+[node name="Help Mode" type="Node" parent="State Machine"]
+script = ExtResource("32_sl4om")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Deck" type="Control" parent="CanvasLayer"]
@@ -186,3 +189,65 @@ anchor_right = 0.02
 anchor_bottom = 0.02
 offset_left = 10.0
 offset_top = 10.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label Description" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "A lot of description text that is very long and describes a lot of things while being long and descriptive."
+autowrap_mode = 3
+
+[node name="VBoxContainer Jokers" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button Skip" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers"]
+layout_mode = 2
+text = "Skip"
+
+[node name="Button Swap" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers"]
+layout_mode = 2
+text = "Swap"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button Exit" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Exit"
+
+[node name="Button Help" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+toggle_mode = true
+text = "?"
+
+[connection signal="toggled" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button Help" to="." method="_on_button_help_toggled"]

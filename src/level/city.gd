@@ -152,6 +152,22 @@ func get_object(tile: Vector2i)-> ObjectTile:
 	return GameData.source_id_to_object_tile[get_tilemap(TileLayer.OBJECTS).get_cell_source_id(tile)]
 
 
+func get_description(tile: Vector2i)-> String:
+	var floor: FloorTile= get_floor_tile(tile)
+	var road: PlaceableTile= get_road(tile)
+	var object: Object= get_object(tile)
+	
+	var priority_tile: BaseTile
+	if road:
+		priority_tile= road
+	elif object:
+		priority_tile= object
+	else:
+		priority_tile= floor
+		
+	return "%s\n%s" % [ priority_tile.name, priority_tile.description ]
+
+
 func get_global_canvas_transform()-> Vector2:
 	return tilemaps[0].get_global_transform_with_canvas().origin	
 
