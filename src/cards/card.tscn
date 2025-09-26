@@ -7,8 +7,6 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_4k7q8"]
 font_size = 30
-outline_size = 3
-outline_color = Color(0.0445579, 0.0445578, 0.0445578, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f61jr"]
 bg_color = Color(0.0666667, 0.0666667, 0.0666667, 0.415686)
@@ -60,7 +58,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(224, 224)
 layout_mode = 2
 texture = ExtResource("1_ivai2")
 

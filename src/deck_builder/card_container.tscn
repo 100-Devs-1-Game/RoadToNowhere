@@ -55,4 +55,7 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/Button Buy" to="." method="_on_button_buy_pressed"]

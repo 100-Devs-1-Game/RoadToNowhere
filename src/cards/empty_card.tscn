@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b1w2mgbp2iueo" path="res://cards/empty_card.gd" id="2_uavy7"]
 
 [node name="Empty Card" type="PanelContainer"]
-custom_minimum_size = Vector2(178, 224)
+custom_minimum_size = Vector2(274, 329)
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = ExtResource("1_7qern")
