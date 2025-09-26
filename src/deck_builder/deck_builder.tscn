@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0wae6mlpwlsv"]
+[gd_scene load_steps=5 format=3 uid="uid://c0wae6mlpwlsv"]
 
 [ext_resource type="Script" uid="uid://b00307e78nh58" path="res://deck_builder/deck_builder.gd" id="1_j1mvi"]
 [ext_resource type="PackedScene" uid="uid://cd1ecb7pjg7cl" path="res://deck_builder/card_container.tscn" id="1_vjh6l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1mvi"]
 bg_color = Color(0.539979, 0.634553, 0.490801, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1mvi"]
 
 [node name="Deck Builder" type="PanelContainer"]
 anchors_preset = 15
@@ -68,9 +70,74 @@ theme_override_font_sizes/font_size = 48
 text = "$37"
 horizontal_alignment = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 50
 columns = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label Jokers" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Jokers"
+horizontal_alignment = 1
+
+[node name="PanelContainer Swap" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j1mvi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Swap"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Swap/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Swap current Card with next Card once per round"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Swap/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "25$"
+
+[node name="PanelContainer Skip" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j1mvi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Skip"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Skip/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Skip 1 Card per round"
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Skip/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "50$"
