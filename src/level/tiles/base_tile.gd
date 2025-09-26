@@ -1,7 +1,7 @@
 class_name BaseTile
 extends Resource
 
-enum CustomScoringAlgorithm { NONE, PARKING, FACTORY }
+enum CustomScoringAlgorithm { NONE, PARKING, FACTORY, CAR }
 
 @export var name: String
 @export_multiline var description: String
@@ -24,3 +24,8 @@ func run_custom_scoring(state: ScoringPhaseState, tile: Vector2i):
 				if ctr > 0:
 					state.trigger_score(tile, ctr)
 					await state.get_tree().create_timer(state.SCORE_DISPLAY_INTERVAL).timeout
+
+		CustomScoringAlgorithm.CAR:
+			if tile in city.get_road_tiles():
+				state.trigger_score(tile, 2)
+				await state.get_tree().create_timer(state.SCORE_DISPLAY_INTERVAL).timeout

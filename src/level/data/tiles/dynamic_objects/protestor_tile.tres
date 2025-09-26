@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DynamicObjectTile" load_steps=2 format=3 uid="uid://3fle7dbt1cgo"]
+
+[ext_resource type="Script" uid="uid://255dlv8rj2wx" path="res://level/tiles/dynamic_object_tile.gd" id="1_y4l1n"]
+
+[resource]
+script = ExtResource("1_y4l1n")
+can_build_on = false
+name = "Protestor"
+description = "Can't build a road here. Moves around randomly"
+target_tilemap = 4
+source_id = 1
+custom_scoring = 0
+metadata/_custom_type_script = "uid://255dlv8rj2wx"

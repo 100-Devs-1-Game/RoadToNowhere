@@ -1,7 +1,7 @@
 class_name City
 extends Node2D
 
-enum TileLayer { GROUND, BUILDINGS, OBJECTS, ROADS }
+enum TileLayer { GROUND, BUILDINGS, OBJECTS, ROADS, DYNAMIC_OBJECTS }
 
 @export var tilemaps: Array[TileMapLayer]
 @export var asphalt_tile: FloorTile
@@ -67,6 +67,9 @@ func can_build_tile_at(tile: Vector2i)-> bool:
 		return false
 	if tile in get_object_tiles():
 		return false
+	if tile in get_dynamic_object_tiles():
+		if not get_dynamic_object(tile).can_build_on:
+			return false
 	
 	var floor_tile: FloorTile= get_floor_tile(tile)
 	if not floor_tile.can_build_on:
@@ -152,14 +155,27 @@ func get_object(tile: Vector2i)-> ObjectTile:
 	return GameData.source_id_to_object_tile[get_tilemap(TileLayer.OBJECTS).get_cell_source_id(tile)]
 
 
+func get_dynamic_object_tiles()-> Array[Vector2i]:
+	return get_tilemap(TileLayer.DYNAMIC_OBJECTS).get_used_cells()
+
+
+func get_dynamic_object(tile: Vector2i)-> DynamicObjectTile:
+	if not tile in get_dynamic_object_tiles():
+		return null
+	return GameData.source_id_to_dynamic_object_tile[get_tilemap(TileLayer.DYNAMIC_OBJECTS).get_cell_source_id(tile)]
+
+
 func get_description(tile: Vector2i)-> String:
 	var floor: FloorTile= get_floor_tile(tile)
 	var road: PlaceableTile= get_road(tile)
 	var building: Object= get_building(tile)
 	var object: Object= get_object(tile)
+	var dynamic_object: Object= get_dynamic_object(tile)
 	
 	var priority_tile: BaseTile
-	if road:
+	if dynamic_object:
+		priority_tile= dynamic_object
+	elif road:
 		priority_tile= road
 	elif building:
 		priority_tile= building
