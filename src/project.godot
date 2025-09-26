@@ -22,6 +22,14 @@ FloatingText="*res://global/floating_text/floating_text.tscn"
 GameData="*res://global/game_data.tscn"
 Player="*res://global/player.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
