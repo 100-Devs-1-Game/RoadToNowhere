@@ -6,7 +6,7 @@
 script = ExtResource("1_e2glv")
 can_build_on = false
 is_water = false
-name = "River"
+name = "Swamp"
 description = "Need an excavator to remove"
 target_tilemap = 0
 source_id = 3

@@ -11,7 +11,7 @@ road_connections = Array[Vector2i]([Vector2i(1, 0), Vector2i(0, 1), Vector2i(-1,
 auto_scores = true
 name = "Intersection"
 description = "Gain 1 point.
-Lose 1 point for each open side."
+Lose 1 point for each open side"
 target_tilemap = 3
 source_id = 1
 custom_scoring = 0
