@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ty5r5")
 name = "Factory"
-description = ""
+description = "Connect houses via a road to gain points"
 target_tilemap = 1
 source_id = 1
 custom_scoring = 2

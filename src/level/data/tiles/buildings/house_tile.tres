@@ -5,7 +5,8 @@
 [resource]
 script = ExtResource("1_bb8uf")
 name = "House"
-description = ""
+description = "Gain 1 point if at least one road or parking lot is next to it ( not diagonal )"
 target_tilemap = 1
 source_id = 0
+custom_scoring = 0
 metadata/_custom_type_script = "uid://46bt6jaqmwsn"

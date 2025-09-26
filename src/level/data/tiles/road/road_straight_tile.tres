@@ -10,7 +10,8 @@ can_rotate = true
 road_connections = Array[Vector2i]([Vector2i(1, 0), Vector2i(-1, 0)])
 auto_scores = true
 name = "Road"
-description = ""
+description = "Gain 1 point.
+Lose 1 point for each open side."
 target_tilemap = 3
 source_id = 0
 custom_scoring = 0

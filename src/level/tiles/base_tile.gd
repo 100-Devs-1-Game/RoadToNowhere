@@ -4,7 +4,7 @@ extends Resource
 enum CustomScoringAlgorithm { NONE, PARKING, FACTORY }
 
 @export var name: String
-@export var description: String
+@export_multiline var description: String
 @export var target_tilemap: City.TileLayer
 @export var source_id: int
 

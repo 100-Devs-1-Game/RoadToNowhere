@@ -5,8 +5,10 @@
 [resource]
 script = ExtResource("1_ys2np")
 can_build_on = true
+is_water = false
 name = "Grass"
-description = ""
+description = "You can build here"
 target_tilemap = 0
 source_id = 1
+custom_scoring = 0
 metadata/_custom_type_script = "uid://kel1fjggtuht"

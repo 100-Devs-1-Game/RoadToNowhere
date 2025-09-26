@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ualm5")
 name = "Rubble"
-description = ""
+description = "Need an excavator to remove"
 target_tilemap = 2
 source_id = 0
 custom_scoring = 0

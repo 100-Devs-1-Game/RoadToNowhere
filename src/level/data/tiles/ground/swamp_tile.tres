@@ -5,8 +5,10 @@
 [resource]
 script = ExtResource("1_e2glv")
 can_build_on = false
+is_water = false
 name = "River"
-description = ""
+description = "Need an excavator to remove"
 target_tilemap = 0
 source_id = 3
+custom_scoring = 0
 metadata/_custom_type_script = "uid://kel1fjggtuht"
