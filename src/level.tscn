@@ -142,6 +142,7 @@ max_deck_factor = 4
 generate_random_city = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 
 [node name="City" type="Node2D" parent="." node_paths=PackedStringArray("tilemaps")]
 script = ExtResource("2_vonw3")
