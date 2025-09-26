@@ -1,9 +1,13 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bh1phs23v2nvw"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bh1phs23v2nvw"]
 
 [ext_resource type="FontFile" uid="uid://c228qc0m0eunw" path="res://assets_external/RammettoOne-Regular.ttf" id="1_e7bfs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7bfs"]
+bg_color = Color(0.768627, 0.109804, 0.188235, 1)
 
 [resource]
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_e7bfs")
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_e7bfs")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_e7bfs")
