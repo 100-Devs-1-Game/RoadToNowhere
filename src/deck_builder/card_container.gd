@@ -16,6 +16,9 @@ func init(data: CardData):
 	if button_buy.visible:
 		button_buy.text= str("$", data.cost)
 		button_buy.disabled= Player.money < data.cost
+	
+	await get_tree().process_frame
+	spin_box.scale*= 2
 
 
 func _on_button_buy_pressed() -> void:
