@@ -9,5 +9,5 @@ name = "Car"
 description = "Build a road under it to gain points"
 target_tilemap = 4
 source_id = 0
-custom_scoring = 0
+custom_scoring = 3
 metadata/_custom_type_script = "uid://255dlv8rj2wx"
