@@ -1,6 +1,16 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bh1phs23v2nvw"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bh1phs23v2nvw"]
 
 [ext_resource type="FontFile" uid="uid://c228qc0m0eunw" path="res://assets_external/RammettoOne-Regular.ttf" id="1_e7bfs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50bnw"]
+bg_color = Color(0.283394, 0.00530781, 0.0648636, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7j863"]
 bg_color = Color(0.14902, 0.101961, 0.101961, 1)
@@ -29,6 +39,7 @@ bg_color = Color(0.988235, 0.74902, 0.00784314, 1)
 Button/colors/font_color = Color(0.74902, 0.588235, 0, 1)
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_e7bfs")
+Button/styles/disabled = SubResource("StyleBoxFlat_50bnw")
 Button/styles/hover = SubResource("StyleBoxFlat_7j863")
 Button/styles/normal = SubResource("StyleBoxFlat_3taad")
 Label/colors/font_color = Color(0.14902, 0.101961, 0.101961, 1)
