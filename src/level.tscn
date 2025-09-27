@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=61 format=4 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b3er8fw54mg2c" path="res://cards/empty_card.tscn" id="9_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://ped0aiqybjgm" path="res://cards/card.tscn" id="10_8cye3"]
 [ext_resource type="Resource" uid="uid://slteqruj3okk" path="res://cards/data/card_parking.tres" id="10_sl4om"]
+[ext_resource type="Resource" uid="uid://cjg2e6s76vi32" path="res://cards/data/card_dead_end.tres" id="11_qw2y7"]
 [ext_resource type="Texture2D" uid="uid://c66q4oce54gud" path="res://assets/tileset/singles/buildings/factory.png" id="12_ait7k"]
 [ext_resource type="Resource" uid="uid://b316rjq10i810" path="res://level/data/tiles/ground/asphalt_tile.tres" id="13_aoqsc"]
 [ext_resource type="Texture2D" uid="uid://bkn7gtqkdwquf" path="res://assets/tileset/singles/misc/grass_and_palm.png" id="13_dtg4e"]
@@ -156,6 +157,10 @@ tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_uuqa8")
 sources/1 = SubResource("TileSetAtlasSource_samc1")
 
+[sub_resource type="LabelSettings" id="LabelSettings_0mnfp"]
+font_size = 120
+font_color = Color(0, 0.505882, 0.0470588, 1)
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_u52ul")
 empty_card_scene = ExtResource("9_i2t4f")
@@ -164,7 +169,7 @@ card_scene = ExtResource("10_8cye3")
 [node name="Sandbox" type="Node" parent="."]
 script = ExtResource("2_2orkt")
 generate_random_deck = true
-card_pool = Array[ExtResource("5_aoqsc")]([ExtResource("6_mleqk"), ExtResource("7_6btg4"), ExtResource("8_sl4om"), ExtResource("9_6btg4"), ExtResource("10_sl4om")])
+card_pool = Array[ExtResource("5_aoqsc")]([ExtResource("6_mleqk"), ExtResource("7_6btg4"), ExtResource("8_sl4om"), ExtResource("9_6btg4"), ExtResource("10_sl4om"), ExtResource("11_qw2y7")])
 max_deck_factor = 4
 generate_random_city = true
 
@@ -213,6 +218,19 @@ script = ExtResource("24_fj6e6")
 
 [node name="Scoring Phase" type="Node" parent="State Machine"]
 script = ExtResource("19_ait7k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="State Machine/Scoring Phase"]
+layer = 100
+
+[node name="Label Score" type="Label" parent="State Machine/Scoring Phase/CanvasLayer"]
+visible = false
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 34.0
+text = "54"
+label_settings = SubResource("LabelSettings_0mnfp")
 
 [node name="Help Mode" type="Node" parent="State Machine"]
 script = ExtResource("32_sl4om")

@@ -3,12 +3,20 @@ extends StateMachineState
 
 const SCORE_DISPLAY_INTERVAL= 0.5
 
+@onready var label_score: Label = $"CanvasLayer/Label Score"
+
 var score: int
 
 
 
 func on_enter():
 	score_city()
+	label_score.text= "0"
+	label_score.show()
+
+
+func on_exit():
+	label_score.hide()
 
 
 func score_city():
@@ -77,3 +85,4 @@ func trigger_score(tile: Vector2i, amount: int, offset: Vector2= Vector2.ZERO):
 	FloatingText.add(canvas_pos, Utils.number_with_sign(amount), 2.0, color, 30, false, true)
 
 	score+= amount
+	label_score.text= str(score)
