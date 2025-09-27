@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bh1phs23v2nvw"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bh1phs23v2nvw"]
 
 [ext_resource type="FontFile" uid="uid://c228qc0m0eunw" path="res://assets_external/RammettoOne-Regular.ttf" id="1_e7bfs"]
 
@@ -32,6 +32,10 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3taad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7bfs"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7bfs"]
 bg_color = Color(0.988235, 0.74902, 0.00784314, 1)
 
@@ -45,4 +49,12 @@ Button/styles/normal = SubResource("StyleBoxFlat_3taad")
 Label/colors/font_color = Color(0.14902, 0.101961, 0.101961, 1)
 Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_e7bfs")
+LineEdit/colors/font_color = Color(0.988235, 0.74902, 0.00784314, 1)
+LineEdit/fonts/font = ExtResource("1_e7bfs")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_3taad")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_e7bfs")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_e7bfs")
+SpinBox/colors/down_disabled_icon_modulate = Color(0.283394, 0.00530781, 0.0648636, 1)
+SpinBox/colors/down_icon_modulate = Color(0.988235, 0.74902, 0.00784314, 1)
+SpinBox/colors/up_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5)
+SpinBox/colors/up_icon_modulate = Color(0.988235, 0.74902, 0.00784314, 1)
