@@ -63,13 +63,17 @@ func _input(event: InputEvent) -> void:
 func trigger_score(tile: Vector2i, amount: int, offset: Vector2= Vector2.ZERO):
 	assert(amount != 0)
 	var city: City= Global.city
-	var origin: Vector2= city.get_global_canvas_transform()
-	origin.y-= 20
+	#var origin: Vector2= city.get_global_canvas_transform()
+	#origin.y-= 20
 	
 	var color:= Color.GREEN
 	if amount < 0:
 		color= Color.RED
 	
-	FloatingText.add(origin + city.get_position_from_tile(tile) + offset, Utils.number_with_sign(amount), 2.0, color, 30, false, true)
+	#var canvas_pos: Vector2= origin + city.get_position_from_tile(tile) + offset
+	offset.y-= 20
+	var canvas_pos: Vector2= city.get_canvas_transform() * ( city.get_position_from_tile(tile) + offset )
+	
+	FloatingText.add(canvas_pos, Utils.number_with_sign(amount), 2.0, color, 30, false, true)
 
 	score+= amount
