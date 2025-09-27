@@ -1,7 +1,7 @@
 class_name CardContainer
 extends PanelContainer
 
-signal buy_card(data: CardData)
+signal bought_card(data: CardData)
 
 @onready var card: Card = %Card
 @onready var spin_box: SpinBox = %SpinBox
@@ -24,4 +24,4 @@ func init(data: CardData):
 func _on_button_buy_pressed() -> void:
 	card.data.unlocked= true
 	Player.buy(card.data.cost)
-	buy_card.emit(card.data)
+	bought_card.emit(card.data)
