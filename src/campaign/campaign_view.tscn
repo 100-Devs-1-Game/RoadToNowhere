@@ -7,8 +7,8 @@
 [ext_resource type="LabelSettings" uid="uid://urw6o1wbrh5c" path="res://campaign/level_label_settings.tres" id="5_iwiv5"]
 [ext_resource type="LabelSettings" uid="uid://dhh167lx3ifrx" path="res://campaign/highscore_label_settings.tres" id="6_i3tq1"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_joxqi"]
-font_size = 60
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onork"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.180392)
 
 [node name="Campaign View" type="PanelContainer"]
 anchors_preset = 15
@@ -34,15 +34,53 @@ theme_override_constants/margin_bottom = 30
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "CAMPAIGN"
-label_settings = SubResource("LabelSettings_joxqi")
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Button Deck" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = "  Build Deck  "
+
+[node name="Label Money" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 60
+text = "$60"
+horizontal_alignment = 1
+
+[node name="Button Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_onork")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 10
 columns = 4
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button Deck" to="." method="_on_button_deck_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button Exit" to="." method="_on_button_exit_pressed"]

@@ -8,6 +8,7 @@ extends PanelContainer
 @export var highscore_label_settings: LabelSettings
 
 @onready var grid_container: GridContainer = %GridContainer
+@onready var label_money: Label = %"Label Money"
 
 
 
@@ -19,6 +20,8 @@ func _ready() -> void:
 
 
 func update():
+	label_money.text= Player.get_money_str()
+	
 	UIUtils.free_children(grid_container)
 	
 	var cant_unlock:= false
@@ -48,11 +51,28 @@ func update():
 			UIUtils.add_empty(grid_container)
 		else:
 			var unlock_button: Button= unlock_button_scene.instantiate()
-			unlock_button.text= "Unlock [ $%d ]" % [ i*10 ]
-			if cant_unlock:
+			var cost: int= i * 10
+			unlock_button.text= "Unlock [ $%d ]" % [ cost ]
+			if cant_unlock or Player.money < cost:
 				unlock_button.disabled= true
 			grid_container.add_child(unlock_button)
+			unlock_button.pressed.connect(on_unlock.bind(level_data, cost))
 			cant_unlock= true
+
+
+func on_unlock(level_data: LevelData, cost: int):
+	level_data.unlocked= true
+	Player.buy(cost)
+	update()
+
 
 func on_play_level(level_data: LevelData):
 	SceneLoader.play_level(level_data)
+
+
+func _on_button_deck_pressed() -> void:
+	SceneLoader.build_deck()
+
+
+func _on_button_exit_pressed() -> void:
+	SceneLoader.enter_main_menu()
