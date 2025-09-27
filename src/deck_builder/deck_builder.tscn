@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cd1ecb7pjg7cl" path="res://deck_builder/card_container.tscn" id="1_vjh6l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1mvi"]
-bg_color = Color(0.197274, 0.182733, 0.176445, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1mvi"]
 

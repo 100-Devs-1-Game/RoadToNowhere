@@ -224,7 +224,6 @@ layer = 100
 
 [node name="Label Score" type="Label" parent="State Machine/Scoring Phase/CanvasLayer"]
 visible = false
-anchors_preset = -1
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 40.0
@@ -300,7 +299,7 @@ alignment = 1
 [node name="Button Exit" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Exit"
+text = " Exit "
 
 [node name="Button Help" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
