@@ -16,6 +16,9 @@ var deck: Deck
 
 func _ready() -> void:
 	Global.level= self
+	deck= Player.deck.copy()
+	deck.shuffle()
+	deck.half()
 
 
 func build_deck():
