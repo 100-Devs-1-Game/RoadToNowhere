@@ -1,11 +1,14 @@
-class_name Campaign
+class_name CampaignData
+extends Resource
 
-var level_data: Array[LevelData]
+@export var level_data: Array[LevelData]
 var level_scores: Array[int]
 
 
 
-func update_level_score(level_index: int, score: int):
+func update_level_score(score: int):
+	var level_index: int= level_data.find(SceneLoader.level_data)
+
 	var current_score: int= level_scores[level_index]
 	if score > current_score:
 		var delta: int= score - current_score

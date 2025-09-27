@@ -170,7 +170,7 @@ card_scene = ExtResource("10_8cye3")
 script = ExtResource("2_2orkt")
 generate_random_deck = true
 card_pool = Array[ExtResource("5_aoqsc")]([ExtResource("6_mleqk"), ExtResource("7_6btg4"), ExtResource("8_sl4om"), ExtResource("9_6btg4"), ExtResource("10_sl4om"), ExtResource("11_qw2y7")])
-max_deck_factor = 4
+max_deck_factor = 2
 generate_random_city = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

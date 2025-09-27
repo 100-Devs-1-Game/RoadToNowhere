@@ -1,8 +1,7 @@
 extends Node
 
 var money: int
-var current_level: int
-var campaign: Campaign
+var campaign_data
 
 
 
@@ -11,5 +10,5 @@ func buy(cost: int):
 
 
 func update_level_score(score: int):
-	if campaign:
-		campaign.update_level_score(current_level, score)
+	if campaign_data:
+		campaign_data.update_level_score(score)
