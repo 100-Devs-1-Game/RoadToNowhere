@@ -44,7 +44,7 @@ func update():
 
 		var play_button: Button= play_button_scene.instantiate()
 		grid_container.add_child(play_button)
-		play_button.disabled= not level_data.unlocked
+		play_button.disabled= not level_data.unlocked or not Player.is_deck_perfect_size()
 		play_button.pressed.connect(on_play_level.bind(level_data))
 		
 		if level_data.unlocked:
