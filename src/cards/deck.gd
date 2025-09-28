@@ -41,6 +41,14 @@ func half():
 		cards.pop_back()
 
 
+func remove_card(data: CardData):
+	for card in cards:
+		if card.data == data:
+			cards.erase(card)
+			return
+	assert(false)
+
+
 func get_size()-> int:
 	return cards.size()
 
