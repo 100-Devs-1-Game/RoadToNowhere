@@ -8,9 +8,9 @@ script = ExtResource("2_tblul")
 card_icon = ExtResource("1_r2nmx")
 can_rotate = false
 road_connections = Array[Vector2i]([Vector2i(1, 0), Vector2i(0, 1), Vector2i(-1, 0), Vector2i(0, -1)])
-auto_scores = true
+score = 3
 name = "Intersection"
-description = "Gain 1 point.
+description = "Gain 3 points.
 Lose 1 point for each open side"
 target_tilemap = 3
 source_id = 1

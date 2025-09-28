@@ -6,7 +6,7 @@ extends BaseTile
 @export var card_icon: Texture2D
 @export var can_rotate: bool= true
 @export var road_connections: Array[Vector2i]
-@export var auto_scores: bool= true
+@export var score: int= 0
 
 
 

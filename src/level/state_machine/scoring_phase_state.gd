@@ -29,8 +29,8 @@ func score_city():
 		#FloatingText.add(origin + city.get_position_from_tile(tile), "+1", 2.0, Color.GREEN, 30, false, true)
 		var road: PlaceableTile= city.get_road(tile_pos)
 		
-		if road.auto_scores:
-			trigger_score(tile_pos, 1)
+		if road.score > 0:
+			trigger_score(tile_pos, road.score)
 		
 		road.run_custom_scoring(self, tile_pos)
 		
