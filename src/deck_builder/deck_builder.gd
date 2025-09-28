@@ -17,13 +17,28 @@ extends PanelContainer
 
 func _ready() -> void:
 	button_increase_deck_size.text= str("Increase $", increase_deck_size_cost)
+	
+	if Player.deck.is_empty():
+		initialize_deck()
 	update()
+
+
+func initialize_deck():
+	while true:
+		for card in GameData.card_pool:
+			if not card.unlocked:
+				continue
+			Player.deck.add_card(card)
+			if Player.is_deck_perfect_size():
+				break
+		if Player.is_deck_perfect_size():
+			break
 
 
 func update():
 	var deck_size: int= Player.deck.get_size()
 	label_deck_size.text= "Deck Size %d/%d" % [ deck_size, Player.max_deck_size ]
-	if deck_size != Player.max_deck_size: 
+	if not Player.is_deck_perfect_size(): 
 		label_deck_size.add_theme_stylebox_override("normal", red_label_frame)
 		button_play.disabled= true
 	else:
