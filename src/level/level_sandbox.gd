@@ -17,8 +17,15 @@ func _ready() -> void:
 	if generate_random_city:
 		generate_city()
 
-	if generate_random_deck:
+	if generate_random_deck and Player.deck.is_empty():
 		generate_deck()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_pressed(): return
+	if event is InputEventKey:
+		if event.keycode == KEY_F2:
+			level.state_machine.change_state(level.state_machine.scoring_phase)
 
 
 func generate_deck():
@@ -31,6 +38,7 @@ func generate_deck():
 	
 	level.deck= deck
 	level.build_deck()
+
 
 func generate_city():
 	var city: City= Global.city
