@@ -18,13 +18,13 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 	var target_tilemap: TileLayer= tile_to_place.target_tilemap
 	var tilemap: TileMapLayer= get_tilemap(target_tilemap)
 	
-	prints("Tile rot", tile_rot)
+	#prints("Tile rot", tile_rot)
 	tile_rot= wrapf(tile_rot, 0.0, 2 * PI)
-	prints("Tile rot wrapped", tile_rot)
+	#prints("Tile rot wrapped", tile_rot)
 	
 	var tile_alternate: int= 0
 	var tile_rot_deg: int= round(rad_to_deg(tile_rot))
-	prints("Tile rot deg", tile_rot_deg)
+	#prints("Tile rot deg", tile_rot_deg)
 
 	match int(tile_rot_deg):
 		90:
@@ -49,12 +49,12 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 			for connection in road.road_connections:
 				if not road_connections.has(tile_pos):
 					road_connections[tile_pos]= []
-				prints("rot", tile_rot)
-				prints("from", connection)
+				#prints("rot", tile_rot)
+				#prints("from", connection)
 				var vec_rot: Vector2= Vector2(connection).rotated(tile_rot)
-				prints("to vec2 rotated", vec_rot)
+				#prints("to vec2 rotated", vec_rot)
 				var rotated_connection: Vector2i= vec_rot.round()
-				prints("Connection", rotated_connection)
+				#prints("Connection", rotated_connection)
 				road_connections[tile_pos].append(rotated_connection)
 
 
