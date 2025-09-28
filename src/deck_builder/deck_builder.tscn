@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0wae6mlpwlsv"]
+[gd_scene load_steps=7 format=3 uid="uid://c0wae6mlpwlsv"]
 
 [ext_resource type="Script" uid="uid://b00307e78nh58" path="res://deck_builder/deck_builder.gd" id="1_j1mvi"]
 [ext_resource type="PackedScene" uid="uid://cd1ecb7pjg7cl" path="res://deck_builder/card_container.tscn" id="1_vjh6l"]
+[ext_resource type="StyleBox" uid="uid://5h8jkj0atmis" path="res://deck_builder/transparent_label_frame.tres" id="3_6fe88"]
+[ext_resource type="StyleBox" uid="uid://qn0xqoxxgxkt" path="res://deck_builder/red_label_frame.tres" id="4_1rgle"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1mvi"]
 bg_color = Color(0, 0, 0, 1)
@@ -17,6 +19,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_j1mvi")
 script = ExtResource("1_j1mvi")
 card_container_scene = ExtResource("1_vjh6l")
+transparent_label_frame = ExtResource("3_6fe88")
+red_label_frame = ExtResource("4_1rgle")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -43,12 +47,15 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="Label Deck Size" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(550, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_6fe88")
 text = "Deck Size 10 / 15"
 
 [node name="Button Increase Deck Size" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -56,13 +63,15 @@ theme_override_font_sizes/font_size = 48
 text = " Increase $5 "
 
 [node name="Button Play" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 48
 text = "Play"
 
-[node name="Label Deck Money" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer"]
+[node name="Label Money" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -141,3 +150,6 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "50$"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer/Button Increase Deck Size" to="." method="_on_button_increase_deck_size_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer/Button Play" to="." method="_on_button_play_pressed"]

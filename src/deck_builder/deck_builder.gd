@@ -1,13 +1,41 @@
 class_name DeckBuilder
 extends PanelContainer
 
+@export var increase_deck_size_cost: int= 5
 @export var card_container_scene: PackedScene
+@export var transparent_label_frame: StyleBoxFlat
+@export var red_label_frame: StyleBoxFlat
+
 
 @onready var display_container: GridContainer = %GridContainer
+@onready var label_money: Label = %"Label Money"
+@onready var button_increase_deck_size: Button = %"Button Increase Deck Size"
+@onready var label_deck_size: Label = %"Label Deck Size"
+@onready var button_play: Button = %"Button Play"
 
 
 
 func _ready() -> void:
+	button_increase_deck_size.text= str("Increase $", increase_deck_size_cost)
+	update()
+
+
+func update():
+	var deck_size: int= Player.deck.get_size()
+	label_deck_size.text= "Deck Size %d/%d" % [ deck_size, Player.max_deck_size ]
+	if deck_size != Player.max_deck_size: 
+		label_deck_size.add_theme_stylebox_override("normal", red_label_frame)
+		button_play.disabled= true
+	else:
+		label_deck_size.add_theme_stylebox_override("normal", transparent_label_frame)
+		button_play.disabled= false
+	
+	label_money.text= Player.get_money_str()
+	button_increase_deck_size.disabled= Player.money < increase_deck_size_cost
+
+	UIUtils.free_children(display_container)
+	
+	
 	for i in 10:
 		var card: CardData
 		if i < GameData.card_pool.size():
@@ -15,3 +43,21 @@ func _ready() -> void:
 			var card_container: CardContainer= card_container_scene.instantiate()
 			display_container.add_child(card_container)
 			card_container.init(card)
+			card_container.bought_card.connect(on_card_bought)
+			card_container.deck_updated.connect(on_deck_updated)
+		
+
+func on_card_bought(card_data: CardData):
+	update()
+
+
+func on_deck_updated():
+	update()
+
+
+func _on_button_play_pressed() -> void:
+	SceneLoader.enter_campaign()
+
+
+func _on_button_increase_deck_size_pressed() -> void:
+	Player.max_deck_size+= 2

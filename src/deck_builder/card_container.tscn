@@ -31,7 +31,7 @@ theme_override_font_sizes/font_size = 30
 disabled = true
 text = "-"
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer Spin Box"]
+[node name="Label Count" type="Label" parent="VBoxContainer/HBoxContainer Spin Box"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
