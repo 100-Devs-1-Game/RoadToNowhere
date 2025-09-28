@@ -7,8 +7,9 @@
 script = ExtResource("2_nhtpq")
 card_icon = ExtResource("1_vxxwf")
 can_rotate = true
+flip_h = true
 road_connections = Array[Vector2i]([Vector2i(-1, 0)])
-auto_scores = false
+score = 0
 name = "Road End"
 description = "Lose 1 point for each open side"
 target_tilemap = 3

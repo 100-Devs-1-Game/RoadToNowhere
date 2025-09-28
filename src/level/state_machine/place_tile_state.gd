@@ -4,7 +4,13 @@ extends StateMachineState
 var tile_to_place: PlaceableTile
 var tile_sprite:= Sprite2D.new()
 var can_place_tile: bool= false
-
+var rotation: float= 0.0:
+	set(r):
+		rotation= r
+		tile_sprite.rotation= r
+		if tile_to_place.flip_h and is_equal_approx(r, PI):
+			tile_sprite.rotation= 0
+			tile_sprite.flip_h
 
 
 func _ready() -> void:
@@ -13,7 +19,7 @@ func _ready() -> void:
 
 
 func on_enter():
-	tile_sprite.rotation= 0
+	rotation= 0
 	update_sprite_texture()
 
 
@@ -45,7 +51,7 @@ func on_unhandled_input(event: InputEvent):
 		if event.button_index == MOUSE_BUTTON_LEFT and can_place_tile:
 			var city: City= Global.city
 			#prints("TileSprite rotation", tile_sprite.rotation)
-			city.place_tile(tile_to_place, city.get_mouse_tile(), tile_sprite.rotation)
+			city.place_tile(tile_to_place, city.get_mouse_tile(), rotation)
 			finished.emit()
 	elif event.is_action("rotate_left") and tile_to_place.can_rotate:
 		rotate(-1)
@@ -54,7 +60,7 @@ func on_unhandled_input(event: InputEvent):
 
 
 func rotate(dir: int):
-	tile_sprite.rotation+= dir * PI / 2
+	rotation+= dir * PI / 2
 	#prints("TileSprite rotated", tile_sprite.rotation)
 
 

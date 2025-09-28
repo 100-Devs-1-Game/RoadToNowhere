@@ -30,7 +30,10 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 		90:
 			tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_H
 		180:
-			tile_alternate= TileSetAtlasSource.TRANSFORM_FLIP_H | TileSetAtlasSource.TRANSFORM_FLIP_V
+			if (tile_to_place as PlaceableTile).flip_h:
+				tile_alternate= TileSetAtlasSource.TRANSFORM_FLIP_H
+			else:
+				tile_alternate= TileSetAtlasSource.TRANSFORM_FLIP_H | TileSetAtlasSource.TRANSFORM_FLIP_V
 		270:
 			tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_V
 

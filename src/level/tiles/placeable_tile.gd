@@ -5,6 +5,7 @@ extends BaseTile
 # but may be easier to store redundantly than to extract
 @export var card_icon: Texture2D
 @export var can_rotate: bool= true
+@export var flip_h: bool= false
 @export var road_connections: Array[Vector2i]
 @export var score: int= 0
 
