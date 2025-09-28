@@ -310,4 +310,5 @@ size_flags_horizontal = 10
 toggle_mode = true
 text = "?"
 
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button Exit" to="." method="_on_button_exit_pressed"]
 [connection signal="toggled" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button Help" to="." method="_on_button_help_toggled"]

@@ -59,3 +59,7 @@ func is_deck_empty():
 
 func _on_button_help_toggled(toggled_on: bool) -> void:
 	state_machine.toggle_help_mode(toggled_on)
+
+
+func _on_button_exit_pressed() -> void:
+	SceneLoader.enter_campaign()
