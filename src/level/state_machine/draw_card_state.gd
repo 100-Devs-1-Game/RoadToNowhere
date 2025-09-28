@@ -9,6 +9,7 @@ signal drawn_card(tile_to_place: CardData)
 
 func on_enter():
 	if skip:
+		await get_tree().process_frame
 		drawn_card.emit(Global.level.draw_card())
 
 
