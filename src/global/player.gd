@@ -16,6 +16,10 @@ func update_level_score(score: int):
 		campaign_data.update_level_score(score)
 
 
+func earn(amount: int):
+	money+= amount
+
+
 func get_money_str()-> String:
 	return str("$", money)
 
