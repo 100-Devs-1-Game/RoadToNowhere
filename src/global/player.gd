@@ -2,7 +2,8 @@ extends Node
 
 var money: int
 var campaign_data
-var deck: Deck
+var deck: Deck= Deck.new()
+var max_deck_size: int= 10
 
 
 
