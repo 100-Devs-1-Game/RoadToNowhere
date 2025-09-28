@@ -53,5 +53,13 @@ func get_size()-> int:
 	return cards.size()
 
 
+func get_card_count(data: CardData)-> int:
+	var result: int= 0
+	for card in cards:
+		if card.data == data:
+			result+= 1
+	return result
+
+
 func is_empty()-> bool:
 	return cards.is_empty()
