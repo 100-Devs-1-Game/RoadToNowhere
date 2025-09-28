@@ -8,6 +8,8 @@ var level_scores: Array[int]
 
 func update_level_score(score: int):
 	var level_index: int= level_data.find(SceneLoader.level_data)
+	if level_scores.is_empty():
+		level_scores.resize(level_data.size())
 
 	var current_score: int= level_scores[level_index]
 	if score > current_score:
