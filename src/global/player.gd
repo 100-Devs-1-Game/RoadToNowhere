@@ -18,3 +18,7 @@ func update_level_score(score: int):
 
 func get_money_str()-> String:
 	return str("$", money)
+
+
+func is_deck_perfect_size()-> bool:
+	return deck.get_size() == max_deck_size
