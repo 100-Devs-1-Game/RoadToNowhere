@@ -19,6 +19,7 @@ func _ready() -> void:
 	deck= Player.deck.copy()
 	deck.shuffle()
 	deck.half()
+	build_deck()
 
 
 func build_deck():
