@@ -26,7 +26,7 @@ func add(pos: Vector2, text: String, duration: float= 1, color: Color= Color.WHI
 	var label:= Label.new()
 	label.text= text
 	label.position= pos
-	label.modulate= color
+	label.add_theme_color_override("font_color", color)
 	label.add_theme_font_size_override("font_size", font_size)
 	canvas_layer.add_child(label)
 	label.position.x-= label.get_rect().size.x / 2
