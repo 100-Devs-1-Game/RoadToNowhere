@@ -66,21 +66,18 @@ func score_city():
 		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
 	for tile_pos in city.get_building_tiles():
-		var building: BuildingTile= city.get_building(tile_pos)
-
-		if building.road_access_scores and road_access_dict.has(tile_pos):
-			trigger_score(tile_pos, 1)
-
 		for neighbor in Utils.get_neighbor_tiles(tile_pos):
 			for network in road_networks:
 				if network.has_tile(neighbor):
 					network.add_building(tile_pos)
-		
-		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
 	for tile_pos in city.get_building_tiles():
 		var building: BuildingTile= city.get_building(tile_pos)
-		building.run_custom_scoring(self, tile_pos)
+
+		if building.road_access_scores and road_access_dict.has(tile_pos):
+			trigger_score(tile_pos, 1)
+		else:
+			building.run_custom_scoring(self, tile_pos)
 
 
 	Player.update_level_score(score)
