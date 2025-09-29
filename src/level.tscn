@@ -291,7 +291,6 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 400)
 layout_mode = 2
-text = "A lot of description text that is very long and describes a lot of things while being long and descriptive."
 autowrap_mode = 3
 
 [node name="VBoxContainer Jokers" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -302,6 +301,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 text = "Skip"
 
 [node name="Button Swap" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers"]
@@ -309,6 +309,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 text = "Swap"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -319,12 +320,14 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
+focus_mode = 0
 text = " Exit "
 
 [node name="Button Help" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_horizontal = 10
+focus_mode = 0
 toggle_mode = true
 text = "?"
 
