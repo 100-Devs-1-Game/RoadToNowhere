@@ -79,7 +79,7 @@ func score_city():
 	building_tiles= city.get_building_tiles()
 	building_tiles.sort_custom(sort_by_coordinates)
 	for tile_pos in building_tiles:
-		for neighbor in Utils.get_neighbor_tiles(tile_pos):
+		for neighbor in Utils.get_neighbor_tiles(tile_pos, false):
 			for network in road_networks:
 				if network.has_tile(neighbor):
 					network.add_building(tile_pos)
