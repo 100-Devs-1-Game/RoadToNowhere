@@ -4,6 +4,8 @@ var money: int
 var campaign_data
 var deck: Deck= Deck.new()
 var max_deck_size: int= 10
+var has_swap_joker: bool= false
+var has_skip_joker: bool= false
 
 
 

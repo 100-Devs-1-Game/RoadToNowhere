@@ -9,8 +9,13 @@ extends Node2D
 @onready var ui_deck: Control = %Deck
 @onready var state_machine: LevelStateMachine = $"State Machine"
 @onready var label_description: Label = %"Label Description"
+@onready var button_skip: Button = %"Button Skip"
+@onready var button_swap: Button = %"Button Swap"
 
 var deck: Deck
+var can_skip: bool
+var can_swap: bool
+var current_card: CardData
 
 
 
@@ -20,6 +25,10 @@ func _ready() -> void:
 	deck.shuffle()
 	deck.half()
 	build_deck()
+	
+	can_skip= Player.has_skip_joker
+	can_swap= Player.has_swap_joker
+	update_buttons()
 
 
 func build_deck():
@@ -37,7 +46,8 @@ func draw_card()-> CardData:
 	var card: Card= card_scene.instantiate()
 	ui_deck.add_child(card)
 	card.position= last_pos
-	card.init(deck.pop())
+	current_card= deck.pop()
+	card.init(current_card)
 	return card.data
 
 
@@ -47,6 +57,11 @@ func pop_deck():
 
 func set_description(text: String):
 	label_description.text= text
+
+
+func update_buttons():
+	button_skip.disabled= not can_skip
+	button_swap.disabled= not can_swap
 
 
 func get_top_deck_card():
@@ -63,3 +78,18 @@ func _on_button_help_toggled(toggled_on: bool) -> void:
 
 func _on_button_exit_pressed() -> void:
 	SceneLoader.enter_campaign()
+
+
+func _on_button_skip_pressed() -> void:
+	state_machine.change_state(state_machine.draw_card)
+	can_skip= false
+	update_buttons()
+
+
+func _on_button_swap_pressed() -> void:
+	if deck.get_size() < 2:
+		return
+	deck.add_card(current_card)
+	deck.swap()
+	can_swap= false
+	update_buttons()

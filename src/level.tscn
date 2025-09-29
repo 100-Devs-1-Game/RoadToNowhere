@@ -297,12 +297,14 @@ autowrap_mode = 3
 layout_mode = 2
 
 [node name="Button Skip" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Skip"
 
 [node name="Button Swap" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -324,5 +326,7 @@ size_flags_horizontal = 10
 toggle_mode = true
 text = "?"
 
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers/Button Skip" to="." method="_on_button_skip_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers/Button Swap" to="." method="_on_button_swap_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button Exit" to="." method="_on_button_exit_pressed"]
 [connection signal="toggled" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button Help" to="." method="_on_button_help_toggled"]

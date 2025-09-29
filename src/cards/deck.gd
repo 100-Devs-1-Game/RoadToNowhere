@@ -41,6 +41,11 @@ func half():
 		cards.pop_back()
 
 
+func swap():
+	cards.push_front(cards[1])
+	cards.remove_at(2)
+
+
 func remove_card(data: CardData):
 	for card in cards:
 		if card.data == data:

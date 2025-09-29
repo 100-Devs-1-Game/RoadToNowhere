@@ -2,6 +2,8 @@ class_name DeckBuilder
 extends PanelContainer
 
 @export var increase_deck_size_cost: int= 5
+@export var swap_cost: int= 25
+@export var skip_cost: int= 25
 @export var card_container_scene: PackedScene
 @export var transparent_label_frame: StyleBoxFlat
 @export var red_label_frame: StyleBoxFlat
@@ -12,6 +14,8 @@ extends PanelContainer
 @onready var button_increase_deck_size: Button = %"Button Increase Deck Size"
 @onready var label_deck_size: Label = %"Label Deck Size"
 @onready var button_play: Button = %"Button Play"
+@onready var button_swap: Button = %"Button Swap"
+@onready var button_skip: Button = %"Button Skip"
 
 
 
@@ -50,7 +54,6 @@ func update():
 
 	UIUtils.free_children(display_container)
 	
-	
 	for i in 10:
 		var card: CardData
 		if i < GameData.card_pool.size():
@@ -60,7 +63,21 @@ func update():
 			card_container.init(card)
 			card_container.bought_card.connect(on_card_bought)
 			card_container.deck_updated.connect(on_deck_updated)
-		
+
+	if Player.has_skip_joker:
+		button_skip.text= "Bought"
+		button_skip.disabled= true
+	else:
+		button_skip.text= str("$", skip_cost)
+		button_skip.disabled= Player.money < skip_cost
+
+	if Player.has_swap_joker:
+		button_swap.text= "Bought"
+		button_swap.disabled= true
+	else:
+		button_swap.text= str("$", swap_cost)
+		button_swap.disabled= Player.money < swap_cost
+
 
 func on_card_bought(card_data: CardData):
 	update()
