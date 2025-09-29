@@ -2,6 +2,7 @@ class_name ActionBulldoze
 extends BaseAction
 
 @export var rubble_tile: ObjectTile
+@export var tree_tile: ObjectTile
 
 
 
@@ -9,7 +10,8 @@ func can_execute(tile_pos: Vector2i)-> bool:
 	var building: BuildingTile= Global.city.get_building(tile_pos)
 	if building:
 		return true
-	return tile_pos in Global.city.get_object_tiles()
+	var object: ObjectTile= Global.city.get_object(tile_pos)
+	return object == tree_tile
 
 
 func execute(tile_pos: Vector2i):
