@@ -207,7 +207,6 @@ tile_set = SubResource("TileSet_oaehd")
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("14_v5j5c")
 current_state = NodePath("Draw Card")
-debug = true
 
 [node name="Draw Card" type="Node" parent="State Machine"]
 script = ExtResource("15_5pxul")
