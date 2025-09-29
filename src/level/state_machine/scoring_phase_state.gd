@@ -1,6 +1,16 @@
 class_name ScoringPhaseState
 extends StateMachineState
 
+class RoadNetwork:
+	var tiles: Array[Vector2i]
+	
+	func add_tile(tile: Vector2i):
+		tiles.append(tile)
+
+	func has_tile(tile: Vector2i)-> bool:
+		return tile in tiles
+
+
 const SCORE_DISPLAY_INTERVAL= 0.5
 
 @onready var label_score: Label = $"CanvasLayer/Label Score"
@@ -20,6 +30,9 @@ func on_exit():
 
 
 func score_city():
+	var networks: Array[RoadNetwork]
+	flood_fill(networks)
+	
 	score= 0
 	
 	var city: City= Global.city
@@ -40,7 +53,6 @@ func score_city():
 		for connection: Vector2i in city.get_road_connections(tile_pos):
 			var connected_road_pos: Vector2i= tile_pos + connection
 			if connected_road_pos not in city.get_road_tiles() or -connection not in city.get_road_connections(connected_road_pos):
-				#FloatingText.add(origin + city.get_position_from_tile(tile) + Vector2(connection) * 32, "-1", 2.0, Color.RED, 30, false, true)
 				trigger_score(tile_pos, -1, Vector2(connection) * 32)
 		
 		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
@@ -49,7 +61,6 @@ func score_city():
 		var building: BuildingTile= city.get_building(tile_pos)
 
 		if road_access_dict.has(tile_pos):
-			#FloatingText.add(origin + city.get_position_from_tile(tile), "+5", 2.0, Color.GREEN, 30, false, true)
 			trigger_score(tile_pos, 1)
 
 		building.run_custom_scoring(self, tile_pos)
@@ -57,6 +68,37 @@ func score_city():
 		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
 	Player.update_level_score(score)
+
+
+func flood_fill(networks: Array[RoadNetwork]):
+	var city: City= Global.city
+	
+	for tile in city.get_road_tiles():
+		var is_in_network: bool= false
+		for network in networks:
+			if network.has_tile(tile):
+				is_in_network= true
+		if is_in_network:
+			continue
+		
+		var network:= RoadNetwork.new()
+		networks.append(network)
+		var new_tiles: Array[Vector2i]
+		new_tiles.append(tile)
+		
+		while not new_tiles.is_empty():
+			var new_tile: Vector2i= new_tiles.pop_front()
+			assert(not network.has_tile(new_tile))
+			network.add_tile(new_tile)
+		
+			for connection in city.get_road_connections(new_tile):
+				var neighbor: Vector2i= new_tile + connection
+				if network.has_tile(neighbor) or neighbor in new_tiles:
+					continue
+				assert(neighbor != tile)
+				if neighbor in city.get_road_tiles() and -connection in city.get_road_connections(neighbor):
+					new_tiles.append(neighbor)
+					#network.add_tile(neighbor)
 
 
 func _input(event: InputEvent) -> void:
