@@ -61,6 +61,10 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 				road_connections[tile_pos].append(rotated_connection)
 
 
+func remove_tile(tile_pos: Vector2i, layer: TileLayer):
+	get_tilemap(layer).erase_cell(tile_pos)
+
+
 func can_build_tile_at(tile: Vector2i)-> bool:
 	if not is_in_bounds(tile):
 		return false
