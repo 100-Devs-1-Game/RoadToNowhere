@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=65 format=4 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://m0gj5la0r7bi" path="res://assets/tileset/singles/misc/car_red.png" id="28_0mnfp"]
 [ext_resource type="Texture2D" uid="uid://blfuvidd78x46" path="res://assets/tileset/singles/misc/activist_megaphone.png" id="29_qw2y7"]
 [ext_resource type="Script" uid="uid://bhnkxgwlsjki" path="res://level/state_machine/help_mode_state.gd" id="32_sl4om"]
+[ext_resource type="Texture2D" uid="uid://ygtmexp18pm2" path="res://assets/tileset/colored_frames.png" id="37_samc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qw2y7"]
 texture = ExtResource("13_dtg4e")
@@ -162,6 +163,17 @@ sources/1 = SubResource("TileSetAtlasSource_samc1")
 font_size = 120
 font_color = Color(0, 0.505882, 0.0470588, 1)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oaehd"]
+texture = ExtResource("37_samc1")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f8y3u"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_oaehd")
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_u52ul")
 empty_card_scene = ExtResource("9_i2t4f")
@@ -231,6 +243,9 @@ offset_right = 40.0
 offset_bottom = 34.0
 text = "54"
 label_settings = SubResource("LabelSettings_0mnfp")
+
+[node name="TileMapLayer Tile Marker" type="TileMapLayer" parent="State Machine/Scoring Phase"]
+tile_set = SubResource("TileSet_f8y3u")
 
 [node name="Help Mode" type="Node" parent="State Machine"]
 script = ExtResource("32_sl4om")

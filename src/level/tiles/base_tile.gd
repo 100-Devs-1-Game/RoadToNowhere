@@ -12,8 +12,9 @@ enum CustomScoringAlgorithm { NONE, PARKING, FACTORY, CAR }
 
 
 
-func run_custom_scoring(state: ScoringPhaseState, tile: Vector2i):
+func run_custom_scoring(state: ScoringPhaseState, tile: Vector2i, show_text: bool= true)-> int:
 	var city: City= Global.city
+	var score:= 0
 	
 	match custom_scoring:
 		CustomScoringAlgorithm.PARKING:
@@ -22,16 +23,13 @@ func run_custom_scoring(state: ScoringPhaseState, tile: Vector2i):
 				if pos in city.get_building_tiles():
 					ctr+= 1
 				if ctr > 0:
-					state.trigger_score(tile, ctr)
-					await state.get_tree().create_timer(state.SCORE_DISPLAY_INTERVAL).timeout
+					score= ctr
 
 		CustomScoringAlgorithm.CAR:
 			if tile in city.get_road_tiles():
-				state.trigger_score(tile, 2)
-				await state.get_tree().create_timer(state.SCORE_DISPLAY_INTERVAL).timeout
+				score= 2
 
 		CustomScoringAlgorithm.FACTORY:
-			var score: int= 0
 			for network in state.road_networks:
 				if network.has_building(tile):
 					for building_tile in network.buildings:
@@ -39,6 +37,6 @@ func run_custom_scoring(state: ScoringPhaseState, tile: Vector2i):
 						if building.has_workers:
 							score+= 5
 
-			if score > 0:
-				state.trigger_score(tile, score)
-				await state.get_tree().create_timer(state.SCORE_DISPLAY_INTERVAL).timeout
+	if show_text:
+		state.trigger_score(tile, score)
+	return score

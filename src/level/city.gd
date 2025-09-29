@@ -196,6 +196,10 @@ func get_global_canvas_transform()-> Vector2:
 	return tilemaps[0].get_global_transform_with_canvas().origin	
 
 
+func get_rect()-> Rect2i:
+	return tilemaps[0].get_used_rect()
+
+
 func is_water_tile(tile: Vector2i)-> bool:
 	var floor_tile: FloorTile= get_floor_tile(tile)
 	if not floor_tile:
