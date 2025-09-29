@@ -79,6 +79,18 @@ func update():
 		button_swap.disabled= Player.money < swap_cost
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not OS.is_debug_build():
+		return
+	if not event.is_pressed():
+		return
+	
+	if event is InputEventKey:
+		if event.keycode == KEY_F1:
+			Player.earn(100)
+			update()
+
+
 func on_card_bought(card_data: CardData):
 	update()
 
