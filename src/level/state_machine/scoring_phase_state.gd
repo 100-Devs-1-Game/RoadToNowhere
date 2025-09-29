@@ -42,6 +42,9 @@ func on_exit():
 
 
 func score_city():
+	for button in Global.level.buttons:
+		button.disabled= true
+
 	road_networks.clear()
 	flood_fill()
 	
@@ -93,9 +96,10 @@ func score_city():
 			building.run_custom_scoring(self, tile_pos)
 		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
-
 	Player.update_level_score(score)
 
+	Global.level.button_exit.disabled= false
+	
 
 func flood_fill():
 	var city: City= Global.city

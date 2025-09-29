@@ -5,12 +5,14 @@ extends Node2D
 @export var card_scene: PackedScene
 
 @export var deck_card_offset: float= 2.0
+@export var buttons: Array[Button]
 
 @onready var ui_deck: Control = %Deck
 @onready var state_machine: LevelStateMachine = $"State Machine"
 @onready var label_description: Label = %"Label Description"
 @onready var button_skip: Button = %"Button Skip"
 @onready var button_swap: Button = %"Button Swap"
+@onready var button_exit: Button = %"Button Exit"
 
 var deck: Deck
 var can_skip: bool

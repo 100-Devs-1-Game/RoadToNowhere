@@ -174,10 +174,11 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_oaehd")
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_u52ul")
 empty_card_scene = ExtResource("9_i2t4f")
 card_scene = ExtResource("10_8cye3")
+buttons = [NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers/Button Skip"), NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer Jokers/Button Swap"), NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button Exit"), NodePath("CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button Help")]
 
 [node name="Sandbox" type="Node" parent="."]
 script = ExtResource("2_2orkt")
@@ -315,6 +316,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Button Exit" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 text = " Exit "
