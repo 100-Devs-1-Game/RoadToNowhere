@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func on_enter():
 	action_sprite.texture= action.icon
+	Global.level.set_description(action.description)
 
 
 func on_exit():

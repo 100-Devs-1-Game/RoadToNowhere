@@ -8,5 +8,6 @@
 script = ExtResource("1_n4dh4")
 asphalt_tile = ExtResource("1_3ak5a")
 display_name = "Bridge"
+description = "Turn river into asphalt tile"
 icon = ExtResource("2_ubvrc")
 metadata/_custom_type_script = "uid://rt0ujinc3i2w"
