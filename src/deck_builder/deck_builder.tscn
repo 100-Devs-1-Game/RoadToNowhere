@@ -155,3 +155,5 @@ text = "50$"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer/Button Increase Deck Size" to="." method="_on_button_increase_deck_size_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer Header/MarginContainer/HBoxContainer/Button Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Swap/VBoxContainer/Button Swap" to="." method="_on_button_swap_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer Skip/VBoxContainer/Button Skip" to="." method="_on_button_skip_pressed"]

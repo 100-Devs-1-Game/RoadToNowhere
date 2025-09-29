@@ -39,14 +39,19 @@ func build_deck():
 		card.activated.connect(state_machine.draw_card.on_card_drawn)
 
 
-func draw_card()-> CardData:
-	var top_card_node: Control= get_top_deck_card()
-	var last_pos: Vector2= top_card_node.position
-	top_card_node.queue_free()
-	var card: Card= card_scene.instantiate()
-	ui_deck.add_child(card)
-	card.position= last_pos
-	current_card= deck.pop()
+func draw_card(replace: bool= false)-> CardData:
+	var card: Card
+	if not replace:
+		var top_card_node: Control= get_top_deck_card()
+		var last_pos: Vector2= top_card_node.position
+		top_card_node.queue_free()
+		card= card_scene.instantiate()
+		ui_deck.add_child(card)
+		card.position= last_pos
+		current_card= deck.pop()
+	else:
+		card= ui_deck.get_child(ui_deck.get_child_count() - 1)
+	
 	card.init(current_card)
 	return card.data
 
@@ -81,9 +86,12 @@ func _on_button_exit_pressed() -> void:
 
 
 func _on_button_skip_pressed() -> void:
-	state_machine.change_state(state_machine.draw_card)
+	if deck.get_size() < 2:
+		return
+	pop_deck()
 	can_skip= false
 	update_buttons()
+	state_machine.change_state(state_machine.draw_card)
 
 
 func _on_button_swap_pressed() -> void:
@@ -93,3 +101,7 @@ func _on_button_swap_pressed() -> void:
 	deck.swap()
 	can_swap= false
 	update_buttons()
+	current_card= deck.pop()
+	draw_card(true)
+	state_machine.set_current_state(null)
+	state_machine.on_card_drawn(current_card)

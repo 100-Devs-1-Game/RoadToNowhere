@@ -42,8 +42,10 @@ func half():
 
 
 func swap():
-	cards.push_front(cards[1])
-	cards.remove_at(2)
+	dump()
+	cards.push_back(cards[-2])
+	cards.remove_at(cards.size() - 3)
+	dump()
 
 
 func remove_card(data: CardData):
@@ -52,6 +54,12 @@ func remove_card(data: CardData):
 			cards.erase(card)
 			return
 	assert(false)
+
+
+func dump():
+	print("--Dump Deck--")
+	for i in range(get_size() - 1, -1, -1):
+		print(cards[i].data.get_display_name())
 
 
 func get_size()-> int:

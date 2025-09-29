@@ -105,3 +105,13 @@ func _on_button_play_pressed() -> void:
 
 func _on_button_increase_deck_size_pressed() -> void:
 	Player.max_deck_size+= 2
+
+
+func _on_button_swap_pressed() -> void:
+	Player.has_swap_joker= true
+	update()
+
+
+func _on_button_skip_pressed() -> void:
+	Player.has_skip_joker= true
+	update()
