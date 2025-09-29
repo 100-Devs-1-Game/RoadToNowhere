@@ -250,6 +250,9 @@ tile_set = SubResource("TileSet_f8y3u")
 
 [node name="Help Mode" type="Node" parent="State Machine"]
 script = ExtResource("32_sl4om")
+default_description = "Q/E/Mouse wheel to rotate
+WASD/Arrow keys to pan
+Right click to dismiss action card "
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

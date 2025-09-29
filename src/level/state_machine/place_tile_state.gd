@@ -21,6 +21,7 @@ func _ready() -> void:
 func on_enter():
 	rotation= 0
 	update_sprite_texture()
+	Global.level.set_description(tile_to_place.description)
 
 
 func on_exit():
