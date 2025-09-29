@@ -101,6 +101,7 @@ func _on_button_swap_pressed() -> void:
 	deck.swap()
 	can_swap= false
 	update_buttons()
+	
 	current_card= deck.pop()
 	draw_card(true)
 	state_machine.set_current_state(null)
