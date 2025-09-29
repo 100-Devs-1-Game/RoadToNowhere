@@ -3,12 +3,19 @@ extends StateMachineState
 
 class RoadNetwork:
 	var tiles: Array[Vector2i]
+	var buildings: Array[Vector2i]
 	
 	func add_tile(tile: Vector2i):
 		tiles.append(tile)
 
+	func add_building(tile: Vector2i):
+		buildings.append(tile)
+
 	func has_tile(tile: Vector2i)-> bool:
 		return tile in tiles
+	
+	func has_building(tile: Vector2i)-> bool:
+		return tile in buildings
 
 
 const SCORE_DISPLAY_INTERVAL= 0.5
@@ -16,6 +23,7 @@ const SCORE_DISPLAY_INTERVAL= 0.5
 @onready var label_score: Label = $"CanvasLayer/Label Score"
 
 var score: int
+var road_networks: Array[RoadNetwork]
 
 
 
@@ -30,8 +38,8 @@ func on_exit():
 
 
 func score_city():
-	var networks: Array[RoadNetwork]
-	flood_fill(networks)
+	road_networks.clear()
+	flood_fill()
 	
 	score= 0
 	
@@ -60,29 +68,37 @@ func score_city():
 	for tile_pos in city.get_building_tiles():
 		var building: BuildingTile= city.get_building(tile_pos)
 
-		if road_access_dict.has(tile_pos):
+		if building.road_access_scores and road_access_dict.has(tile_pos):
 			trigger_score(tile_pos, 1)
 
+		for neighbor in Utils.get_neighbor_tiles(tile_pos):
+			for network in road_networks:
+				if network.has_tile(neighbor):
+					network.add_building(tile_pos)
+		
+		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
+
+	for tile_pos in city.get_building_tiles():
+		var building: BuildingTile= city.get_building(tile_pos)
 		building.run_custom_scoring(self, tile_pos)
 
-		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
 	Player.update_level_score(score)
 
 
-func flood_fill(networks: Array[RoadNetwork]):
+func flood_fill():
 	var city: City= Global.city
 	
 	for tile in city.get_road_tiles():
 		var is_in_network: bool= false
-		for network in networks:
+		for network in road_networks:
 			if network.has_tile(tile):
 				is_in_network= true
 		if is_in_network:
 			continue
 		
 		var network:= RoadNetwork.new()
-		networks.append(network)
+		road_networks.append(network)
 		var new_tiles: Array[Vector2i]
 		new_tiles.append(tile)
 		
@@ -98,7 +114,6 @@ func flood_fill(networks: Array[RoadNetwork]):
 				assert(neighbor != tile)
 				if neighbor in city.get_road_tiles() and -connection in city.get_road_connections(neighbor):
 					new_tiles.append(neighbor)
-					#network.add_tile(neighbor)
 
 
 func _input(event: InputEvent) -> void:

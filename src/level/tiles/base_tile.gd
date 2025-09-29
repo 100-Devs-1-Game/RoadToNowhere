@@ -29,3 +29,16 @@ func run_custom_scoring(state: ScoringPhaseState, tile: Vector2i):
 			if tile in city.get_road_tiles():
 				state.trigger_score(tile, 2)
 				await state.get_tree().create_timer(state.SCORE_DISPLAY_INTERVAL).timeout
+
+		CustomScoringAlgorithm.FACTORY:
+			var score: int= 0
+			for network in state.road_networks:
+				if network.has_building(tile):
+					for building_tile in network.buildings:
+						var building: BuildingTile= city.get_building(building_tile)
+						if building.has_workers:
+							score+= 5
+
+			if score > 0:
+				state.trigger_score(tile, score)
+				await state.get_tree().create_timer(state.SCORE_DISPLAY_INTERVAL).timeout

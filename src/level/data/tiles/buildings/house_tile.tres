@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_bb8uf")
+road_access_scores = true
+has_workers = true
 name = "House"
 description = "Gain 1 point if at least one road or parking lot is next to it ( not diagonal )"
 target_tilemap = 1
