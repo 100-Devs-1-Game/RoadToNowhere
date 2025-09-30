@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ty5r5")
 road_access_scores = false
+has_workers = false
 name = "Factory"
 description = "Connect houses via a road to gain points"
 target_tilemap = 1

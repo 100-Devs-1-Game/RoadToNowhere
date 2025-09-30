@@ -9,5 +9,4 @@
 [resource]
 script = ExtResource("2_1lf75")
 level_data = Array[ExtResource("1_e1q13")]([ExtResource("2_wcraj"), ExtResource("3_3mbot"), ExtResource("4_twoj5")])
-dummy = true
 metadata/_custom_type_script = "uid://b6egf8qcnjhpt"
