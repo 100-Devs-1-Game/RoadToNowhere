@@ -70,8 +70,8 @@ func move_dynamic_object(from: Vector2i, to: Vector2i):
 	assert(to not in get_dynamic_object_tiles())
 	
 	var tilemap: TileMapLayer= get_tilemap(TileLayer.DYNAMIC_OBJECTS)
-	var atlas_coords: Vector2i= tilemap.get_cell_atlas_coords(from)
-	tilemap.set_cell(to, 0, atlas_coords)
+	var source_id: int= tilemap.get_cell_source_id(from)
+	tilemap.set_cell(to, source_id, Vector2i.ZERO)
 	tilemap.erase_cell(from)
 
 
@@ -223,3 +223,22 @@ func is_water_tile(tile: Vector2i)-> bool:
 
 func is_in_bounds(tile: Vector2i)-> bool:
 	return tile in tilemaps[0].get_used_cells()
+
+
+func is_empty(tile: Vector2i, allow_floor: Array[FloorTile])-> bool:
+	if not is_in_bounds(tile):
+		return false
+	if tile in get_road_tiles():
+		return false
+	if tile in get_building_tiles():
+		return false
+	if tile in get_object_tiles():
+		return false
+	if tile in get_dynamic_object_tiles():
+		return false
+	
+	var floor_tile: FloorTile= get_floor_tile(tile)
+	if floor_tile and floor_tile not in allow_floor:
+		return false
+	
+	return true
