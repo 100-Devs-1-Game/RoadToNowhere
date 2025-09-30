@@ -57,7 +57,7 @@ func update():
 		
 		if level_data.unlocked:
 			UIUtils.add_empty(grid_container)
-		elif data.level_scores[i - 1] > get_unlock_score(i):
+		elif data.level_scores[i - 1] >= get_unlock_score(i):
 			UIUtils.add_empty(grid_container)
 			level_data.unlocked= true
 		else:
