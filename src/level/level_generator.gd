@@ -37,7 +37,7 @@ func generate_city():
 			else:
 				city.place_tile(grass_tile, tile) 
 
-	for i in RngUtils.multi_chance100_rng(difficulty * 30, rng):
+	for i in RngUtils.multi_chance100_rng(difficulty * 20, rng):
 		if RngUtils.chance100_rng(50, rng):
 			var x= randi() % size.x
 			for y in size.y:
@@ -60,8 +60,6 @@ func generate_city():
 				city.place_tile(house_tile, tile)
 			elif RngUtils.chance100_rng(1, rng):
 				city.place_tile(factory_tile, tile)
-			elif RngUtils.chance100_rng(0.5, rng):
-				city.place_tile(car_tile, tile)
 				
 	for x in size.x:
 		for y in size.y:
@@ -72,3 +70,5 @@ func generate_city():
 				city.place_tile(tree_tile, tile)
 			elif RngUtils.chance100_rng((difficulty - 5) / 2.0, rng):
 				city.place_tile(protestor_tile, tile)
+			elif RngUtils.chance100_rng(2, rng):
+				city.place_tile(car_tile, tile)
