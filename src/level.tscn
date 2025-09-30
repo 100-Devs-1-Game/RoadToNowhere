@@ -197,9 +197,8 @@ max_deck_factor = 2
 
 [node name="LevelGenerator" type="Node" parent="."]
 script = ExtResource("12_lrhm2")
-seed = 8
-size = Vector2i(14, 14)
-difficulty = 10
+seed = 100
+difficulty = 3
 grass_tile = ExtResource("13_td4uw")
 swamp_tile = ExtResource("14_r5f7e")
 asphalt_tile = ExtResource("13_aoqsc")
