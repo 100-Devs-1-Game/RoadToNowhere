@@ -29,6 +29,8 @@ func generate_city():
 	var rng:= RandomNumberGenerator.new()
 	rng.seed= seed
 
+	prints("Level Seed", seed)
+
 	for x in size.x:
 		for y in size.y:
 			var tile:= Vector2i(x, y) - Vector2i.ONE * size / 2
@@ -72,3 +74,14 @@ func generate_city():
 				city.place_tile(protestor_tile, tile)
 			elif RngUtils.chance100_rng(2, rng):
 				city.place_tile(car_tile, tile)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_pressed(): return
+	if not OS.is_debug_build(): return
+	if event is InputEventKey:
+		if event.keycode == KEY_SPACE:
+			seed+= 1
+			for layer in City.TileLayer.values():
+				Global.city.get_tilemap(layer).clear()
+			generate_city()
