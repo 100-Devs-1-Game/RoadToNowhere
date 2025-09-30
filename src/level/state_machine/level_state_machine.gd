@@ -26,6 +26,7 @@ func on_card_drawn(card_data: CardData):
 
 
 func on_card_placed():
+	Global.level.tick()
 	Global.level.pop_deck()
 	if Global.level.is_deck_empty():
 		change_state(scoring_phase)

@@ -7,6 +7,7 @@ extends Node2D
 @export var deck_card_offset: float= 2.0
 @export var buttons: Array[Button]
 
+@onready var city: City = $City
 @onready var ui_deck: Control = %Deck
 @onready var state_machine: LevelStateMachine = $"State Machine"
 @onready var label_description: Label = %"Label Description"
@@ -60,6 +61,12 @@ func draw_card(replace: bool= false)-> CardData:
 
 func pop_deck():
 	get_top_deck_card().queue_free()
+
+
+func tick():
+	for tile in city.get_dynamic_object_tiles():
+		var obj: DynamicObjectTile= city.get_dynamic_object(tile)
+		obj.tick(tile)
 
 
 func set_description(text: String):
