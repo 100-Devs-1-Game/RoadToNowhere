@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=74 format=4 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -18,20 +18,29 @@
 [ext_resource type="Resource" uid="uid://slteqruj3okk" path="res://cards/data/card_parking.tres" id="10_sl4om"]
 [ext_resource type="Resource" uid="uid://cjg2e6s76vi32" path="res://cards/data/card_dead_end.tres" id="11_qw2y7"]
 [ext_resource type="Texture2D" uid="uid://c66q4oce54gud" path="res://assets/tileset/singles/buildings/factory.png" id="12_ait7k"]
+[ext_resource type="Script" uid="uid://c3827a8ptd8t" path="res://level/level_generator.gd" id="12_lrhm2"]
 [ext_resource type="Script" uid="uid://bkv6owkvnsgef" path="res://level/camera.gd" id="12_uuqa8"]
 [ext_resource type="Resource" uid="uid://b316rjq10i810" path="res://level/data/tiles/ground/asphalt_tile.tres" id="13_aoqsc"]
 [ext_resource type="Texture2D" uid="uid://bkn7gtqkdwquf" path="res://assets/tileset/singles/misc/grass_and_palm.png" id="13_dtg4e"]
+[ext_resource type="Resource" uid="uid://bxxs348bao3ex" path="res://level/data/tiles/ground/grass_tile.tres" id="13_td4uw"]
 [ext_resource type="Script" uid="uid://cvme5yewc08uu" path="res://level/state_machine/place_tile_state.gd" id="14_h6smj"]
 [ext_resource type="Texture2D" uid="uid://cqoucv46tspxt" path="res://assets/tileset/singles/terrain/grass_tile.png" id="14_hvubb"]
+[ext_resource type="Resource" uid="uid://cxqei5n8ibjfn" path="res://level/data/tiles/ground/swamp_tile.tres" id="14_r5f7e"]
 [ext_resource type="Script" uid="uid://cuvyu4ppqqjha" path="res://level/state_machine/level_state_machine.gd" id="14_v5j5c"]
 [ext_resource type="Script" uid="uid://crka775kceip5" path="res://level/state_machine/draw_card_state.gd" id="15_5pxul"]
 [ext_resource type="Texture2D" uid="uid://bbidhb8om86kb" path="res://assets/tileset/singles/terrain/water_tile.png" id="15_aoqsc"]
 [ext_resource type="Texture2D" uid="uid://lon8aolxhdc5" path="res://assets/tileset/singles/streets/street_turn.png" id="16_ilwjd"]
 [ext_resource type="Texture2D" uid="uid://i8tytada0txn" path="res://assets/tileset/singles/terrain/swamp_grass_tile.png" id="16_mleqk"]
+[ext_resource type="Resource" uid="uid://cjvucgx3b5qh7" path="res://level/data/tiles/ground/river_tile.tres" id="16_wp8k7"]
+[ext_resource type="Resource" uid="uid://ccsx6qxw27xhb" path="res://level/data/tiles/buildings/house_tile.tres" id="17_na3no"]
+[ext_resource type="Resource" uid="uid://3yoluykrat12" path="res://level/data/tiles/objects/tree_tile.tres" id="17_wp8k7"]
 [ext_resource type="Texture2D" uid="uid://b8a4bn58iil4e" path="res://assets/tileset/singles/streets/street_t_junction.png" id="17_y3bce"]
+[ext_resource type="Resource" uid="uid://c1mueqekg8h8x" path="res://level/data/tiles/buildings/factory_tile.tres" id="18_07udg"]
 [ext_resource type="Texture2D" uid="uid://c8uete2pck4pq" path="res://assets/tileset/singles/streets/street_parking.png" id="18_u3yai"]
 [ext_resource type="Script" uid="uid://btts8e71u2m77" path="res://level/state_machine/scoring_phase_state.gd" id="19_ait7k"]
 [ext_resource type="Texture2D" uid="uid://dxtyeav4f0dkp" path="res://assets/tileset/singles/misc/rubble.png" id="20_6btg4"]
+[ext_resource type="Resource" uid="uid://c11x4gqslsgle" path="res://level/data/tiles/dynamic_objects/car_tile.tres" id="20_na3no"]
+[ext_resource type="Resource" uid="uid://3fle7dbt1cgo" path="res://level/data/tiles/dynamic_objects/protestor_tile.tres" id="21_07udg"]
 [ext_resource type="Texture2D" uid="uid://cbywdwbc0akg8" path="res://assets/tileset/singles/misc/tree_red.png" id="21_sl4om"]
 [ext_resource type="Script" uid="uid://0owcm3vhau8t" path="res://level/state_machine/run_action_state.gd" id="24_fj6e6"]
 [ext_resource type="Texture2D" uid="uid://m0gj5la0r7bi" path="res://assets/tileset/singles/misc/car_red.png" id="28_0mnfp"]
@@ -185,7 +194,22 @@ script = ExtResource("2_2orkt")
 generate_random_deck = true
 card_pool = Array[ExtResource("5_aoqsc")]([ExtResource("6_mleqk"), ExtResource("7_6btg4"), ExtResource("8_sl4om"), ExtResource("9_6btg4"), ExtResource("10_sl4om"), ExtResource("11_qw2y7")])
 max_deck_factor = 2
-generate_random_city = true
+
+[node name="LevelGenerator" type="Node" parent="."]
+script = ExtResource("12_lrhm2")
+seed = 8
+size = Vector2i(14, 14)
+difficulty = 10
+grass_tile = ExtResource("13_td4uw")
+swamp_tile = ExtResource("14_r5f7e")
+asphalt_tile = ExtResource("13_aoqsc")
+river_tile = ExtResource("16_wp8k7")
+tree_tile = ExtResource("17_wp8k7")
+house_tile = ExtResource("17_na3no")
+factory_tile = ExtResource("18_07udg")
+car_tile = ExtResource("20_na3no")
+protestor_tile = ExtResource("21_07udg")
+metadata/_custom_type_script = "uid://c3827a8ptd8t"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(-100, 0)
