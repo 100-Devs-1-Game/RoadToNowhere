@@ -1,69 +1,97 @@
-[gd_resource type="Resource" script_class="SFXLibrary" load_steps=13 format=3 uid="uid://cyy064m3yc1c"]
+[gd_resource type="Resource" script_class="SFXLibrary" load_steps=25 format=3 uid="uid://cyy064m3yc1c"]
 
 [ext_resource type="Script" uid="uid://80a87mr5ldoe" path="res://sound/sfx_library_item.gd" id="1_qgi7i"]
+[ext_resource type="AudioStream" uid="uid://b5hdja0cdn12d" path="res://assets/sfx/axe_tree_1_a_norm.ogg" id="2_aiami"]
 [ext_resource type="Script" uid="uid://cqrn8758am7i2" path="res://sound/sfx_library.gd" id="2_ofyog"]
+[ext_resource type="AudioStream" uid="uid://bpyb1y3wkyjca" path="res://assets/sfx/bonus_negative_norm.ogg" id="3_a87dn"]
+[ext_resource type="AudioStream" uid="uid://drhg7qrjvh54q" path="res://assets/sfx/bonus_positive_norm.ogg" id="4_p1qu5"]
+[ext_resource type="AudioStream" uid="uid://b1powyl6mnm44" path="res://assets/sfx/bulldozer_1_a_norm.ogg" id="5_h7vql"]
+[ext_resource type="AudioStream" uid="uid://ck0bume7ea4ji" path="res://assets/sfx/card_1_a_norm.ogg" id="6_ibvyq"]
+[ext_resource type="AudioStream" uid="uid://css23ib3ae17g" path="res://assets/sfx/edit_deck_norm.ogg" id="7_jdv7r"]
+[ext_resource type="AudioStream" uid="uid://ci0rqsssx7yco" path="res://assets/sfx/excavation_1_a_norm.ogg" id="8_fk7ul"]
+[ext_resource type="AudioStream" uid="uid://s38dk5j7me4w" path="res://assets/sfx/new_score_norm.ogg" id="9_pccj2"]
+[ext_resource type="AudioStream" uid="uid://wlqwynevm8da" path="res://assets/sfx/place_road_1_a_norm.ogg" id="10_r3nl2"]
+[ext_resource type="AudioStream" uid="uid://02iocdualqqw" path="res://assets/sfx/place_wet_1_a_norm.ogg" id="11_ujbkh"]
+[ext_resource type="AudioStream" uid="uid://d21rjo4krx7sg" path="res://assets/sfx/engine.ogg" id="12_dhf3u"]
 
 [sub_resource type="Resource" id="Resource_qgi7i"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "fell_tree"
+audio_stream = ExtResource("2_aiami")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_ofyog"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "score_negative"
+audio_stream = ExtResource("3_a87dn")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_6vle3"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "score_positive"
+audio_stream = ExtResource("4_p1qu5")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_i0a4y"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "bulldozer"
+audio_stream = ExtResource("5_h7vql")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_mhacm"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "card"
+audio_stream = ExtResource("6_ibvyq")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_wrwdc"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "edit_deck"
+audio_stream = ExtResource("7_jdv7r")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_l0l27"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "excavate"
+audio_stream = ExtResource("8_fk7ul")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_x6vpp"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "highscore"
+audio_stream = ExtResource("9_pccj2")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_jahe0"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "road"
+audio_stream = ExtResource("10_r3nl2")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_qqvc8"]
 script = ExtResource("1_qgi7i")
-name = ""
+name = "bridge"
+audio_stream = ExtResource("11_ujbkh")
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_us8kj"]
+script = ExtResource("1_qgi7i")
+name = "car"
+audio_stream = ExtResource("12_dhf3u")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [resource]
 script = ExtResource("2_ofyog")
-items = Array[ExtResource("1_qgi7i")]([SubResource("Resource_qgi7i"), SubResource("Resource_ofyog"), SubResource("Resource_6vle3"), SubResource("Resource_i0a4y"), SubResource("Resource_mhacm"), SubResource("Resource_wrwdc"), SubResource("Resource_l0l27"), SubResource("Resource_x6vpp"), SubResource("Resource_jahe0"), SubResource("Resource_qqvc8")])
+items = Array[ExtResource("1_qgi7i")]([SubResource("Resource_qgi7i"), SubResource("Resource_ofyog"), SubResource("Resource_6vle3"), SubResource("Resource_i0a4y"), SubResource("Resource_mhacm"), SubResource("Resource_wrwdc"), SubResource("Resource_l0l27"), SubResource("Resource_x6vpp"), SubResource("Resource_jahe0"), SubResource("Resource_qqvc8"), SubResource("Resource_us8kj")])
 metadata/_custom_type_script = "uid://cqrn8758am7i2"
