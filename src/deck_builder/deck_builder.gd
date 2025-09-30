@@ -105,6 +105,8 @@ func _on_button_play_pressed() -> void:
 
 func _on_button_increase_deck_size_pressed() -> void:
 	Player.max_deck_size+= 2
+	Player.buy(increase_deck_size_cost)
+	update()
 
 
 func _on_button_swap_pressed() -> void:
