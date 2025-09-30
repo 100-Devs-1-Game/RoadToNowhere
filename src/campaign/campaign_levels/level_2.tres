@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_7mi53")
-seed = 1
-difficulty = 0
+seed = 4
+difficulty = 1
 size = Vector2i(8, 8)
 unlocked = false
 metadata/_custom_type_script = "uid://b4dhmiu21q5o7"
