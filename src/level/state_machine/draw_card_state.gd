@@ -13,6 +13,7 @@ func on_enter():
 		await get_tree().process_frame
 		await get_tree().create_timer(skip_delay).timeout
 		drawn_card.emit(Global.level.draw_card())
+		AudioManager.play_sound("card")
 
 
 func on_card_drawn():
