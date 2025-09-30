@@ -23,6 +23,7 @@ GameData="*res://global/game_data.tscn"
 Player="*res://global/player.gd"
 SceneLoader="*res://global/scene_loader.tscn"
 SaveManager="*res://global/save_manager.gd"
+AudioManager="*res://global/audio_manager.tscn"
 
 [display]
 

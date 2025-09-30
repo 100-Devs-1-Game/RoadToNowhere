@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="SFXLibrary" load_steps=13 format=3 uid="uid://cyy064m3yc1c"]
+
+[ext_resource type="Script" uid="uid://80a87mr5ldoe" path="res://sound/sfx_library_item.gd" id="1_qgi7i"]
+[ext_resource type="Script" uid="uid://cqrn8758am7i2" path="res://sound/sfx_library.gd" id="2_ofyog"]
+
+[sub_resource type="Resource" id="Resource_qgi7i"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_ofyog"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_6vle3"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_i0a4y"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_mhacm"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_wrwdc"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_l0l27"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_x6vpp"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_jahe0"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[sub_resource type="Resource" id="Resource_qqvc8"]
+script = ExtResource("1_qgi7i")
+name = ""
+db_delta = 0.0
+metadata/_custom_type_script = "uid://80a87mr5ldoe"
+
+[resource]
+script = ExtResource("2_ofyog")
+items = Array[ExtResource("1_qgi7i")]([SubResource("Resource_qgi7i"), SubResource("Resource_ofyog"), SubResource("Resource_6vle3"), SubResource("Resource_i0a4y"), SubResource("Resource_mhacm"), SubResource("Resource_wrwdc"), SubResource("Resource_l0l27"), SubResource("Resource_x6vpp"), SubResource("Resource_jahe0"), SubResource("Resource_qqvc8")])
+metadata/_custom_type_script = "uid://cqrn8758am7i2"
