@@ -8,4 +8,5 @@ script = ExtResource("1_08sv4")
 tile = ExtResource("2_cub2e")
 cost = 1
 unlocked = true
+sound = "road"
 metadata/_custom_type_script = "uid://bdtfng2lo03gk"

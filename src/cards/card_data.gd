@@ -3,7 +3,7 @@ extends Resource
 
 @export var cost: int
 @export var unlocked: bool= false
-
+@export var sound: String
 
 
 func get_display_name()-> String:

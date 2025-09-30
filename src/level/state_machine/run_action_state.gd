@@ -44,6 +44,7 @@ func on_unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and can_execute:
 			action.execute(Global.city.get_mouse_tile())
+			AudioManager.play_sound(Global.level.current_card.sound)
 			finished.emit()
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			finished.emit()

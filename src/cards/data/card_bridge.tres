@@ -8,4 +8,5 @@ script = ExtResource("2_4b2to")
 action = ExtResource("1_l3w3n")
 cost = 20
 unlocked = false
+sound = "bridge"
 metadata/_custom_type_script = "uid://dl8gohwndxyg6"

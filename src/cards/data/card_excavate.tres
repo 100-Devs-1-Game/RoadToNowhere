@@ -8,4 +8,5 @@ script = ExtResource("1_dg8tf")
 action = ExtResource("1_xfysu")
 cost = 15
 unlocked = false
+sound = "excavate"
 metadata/_custom_type_script = "uid://dl8gohwndxyg6"

@@ -53,6 +53,7 @@ func on_unhandled_input(event: InputEvent):
 			var city: City= Global.city
 			#prints("TileSprite rotation", tile_sprite.rotation)
 			city.place_tile(tile_to_place, city.get_mouse_tile(), rotation)
+			AudioManager.play_sound(Global.level.current_card.sound)
 			finished.emit()
 	elif event.is_action("rotate_left") and tile_to_place.can_rotate:
 		rotate(-1)
