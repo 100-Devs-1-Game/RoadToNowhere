@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CampaignData" load_steps=6 format=3 uid="uid://dityb5ukupny7"]
+
+[ext_resource type="Script" uid="uid://b4dhmiu21q5o7" path="res://level/level_data.gd" id="1_e1q13"]
+[ext_resource type="Script" uid="uid://b6egf8qcnjhpt" path="res://campaign/campaign_data.gd" id="2_1lf75"]
+[ext_resource type="Resource" uid="uid://dt7bfgaakef0j" path="res://campaign/campaign_levels/level_1.tres" id="2_wcraj"]
+[ext_resource type="Resource" uid="uid://c528iar4e4rn8" path="res://campaign/campaign_levels/level_2.tres" id="3_3mbot"]
+[ext_resource type="Resource" uid="uid://cyqj2qmdkh3py" path="res://campaign/campaign_levels/level_3.tres" id="4_twoj5"]
+
+[resource]
+script = ExtResource("2_1lf75")
+level_data = Array[ExtResource("1_e1q13")]([ExtResource("2_wcraj"), ExtResource("3_3mbot"), ExtResource("4_twoj5")])
+metadata/_custom_type_script = "uid://b6egf8qcnjhpt"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cnfo6gak221xo"]
 
 [ext_resource type="Script" uid="uid://ogq6qsyoc5vf" path="res://campaign/campaign_view.gd" id="1_joxqi"]
-[ext_resource type="Resource" uid="uid://c73s7kxjdmw3l" path="res://campaign/test_campaign.tres" id="2_onork"]
+[ext_resource type="Resource" uid="uid://dityb5ukupny7" path="res://campaign/campaign.tres" id="2_onork"]
 [ext_resource type="PackedScene" uid="uid://ib3hi4mniwel" path="res://campaign/play_button.tscn" id="3_5a0b5"]
 [ext_resource type="PackedScene" uid="uid://cgnd0ihdb1ro7" path="res://campaign/unlock_button.tscn" id="4_hb0hd"]
 [ext_resource type="LabelSettings" uid="uid://urw6o1wbrh5c" path="res://campaign/level_label_settings.tres" id="5_iwiv5"]
