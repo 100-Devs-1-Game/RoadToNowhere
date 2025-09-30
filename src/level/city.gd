@@ -65,6 +65,16 @@ func remove_tile(tile_pos: Vector2i, layer: TileLayer):
 	get_tilemap(layer).erase_cell(tile_pos)
 
 
+func move_dynamic_object(from: Vector2i, to: Vector2i):
+	assert(from in get_dynamic_object_tiles())
+	assert(to not in get_dynamic_object_tiles())
+	
+	var tilemap: TileMapLayer= get_tilemap(TileLayer.DYNAMIC_OBJECTS)
+	var atlas_coords: Vector2i= tilemap.get_cell_atlas_coords(from)
+	tilemap.set_cell(to, 0, atlas_coords)
+	tilemap.erase_cell(from)
+
+
 func can_build_tile_at(tile: Vector2i)-> bool:
 	if not is_in_bounds(tile):
 		return false

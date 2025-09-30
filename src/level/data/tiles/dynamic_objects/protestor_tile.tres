@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_y4l1n")
 can_build_on = false
+behavior = 1
 name = "Protestor"
 description = "Can't build a road here. Moves around randomly"
 target_tilemap = 4
