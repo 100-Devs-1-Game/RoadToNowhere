@@ -9,7 +9,9 @@ extends Node
 func _ready() -> void:
 	sfx_library.build()
 	for i in num_players - 1:
-		audio_players.append(audio_players[0].duplicate())
+		var alt_player= audio_players[0].duplicate()
+		add_child(alt_player)
+		audio_players.append(alt_player)
 
 
 func play_sound(sound_name: String):

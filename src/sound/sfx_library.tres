@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [sub_resource type="Resource" id="Resource_i0a4y"]
 script = ExtResource("1_qgi7i")
-name = "bulldozer"
+name = "bulldoze"
 audio_stream = ExtResource("5_h7vql")
 db_delta = 0.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
