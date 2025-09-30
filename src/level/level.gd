@@ -14,6 +14,8 @@ extends Node2D
 @onready var button_skip: Button = %"Button Skip"
 @onready var button_swap: Button = %"Button Swap"
 @onready var button_exit: Button = %"Button Exit"
+@onready var level_generator: LevelGenerator = $LevelGenerator
+
 
 var deck: Deck
 var can_skip: bool
@@ -32,6 +34,9 @@ func _ready() -> void:
 	can_skip= Player.has_skip_joker
 	can_swap= Player.has_swap_joker
 	update_buttons()
+
+	if SceneLoader.level_data:
+		level_generator.set_data(SceneLoader.level_data)
 
 
 func build_deck():

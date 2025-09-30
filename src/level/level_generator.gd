@@ -24,6 +24,12 @@ func _ready() -> void:
 	generate_city()
 
 
+func set_data(data: LevelData):
+	seed= data.seed
+	difficulty= data.difficulty
+	size= data.size
+
+
 func generate_city():
 	var city: City= Global.city
 	var rng:= RandomNumberGenerator.new()
