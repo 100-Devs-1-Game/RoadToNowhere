@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_i5t4e")
 action = ExtResource("1_v64w8")
-cost = 100
+cost = 30
 unlocked = false
 metadata/_custom_type_script = "uid://dl8gohwndxyg6"
