@@ -96,6 +96,17 @@ func score_city():
 			building.run_custom_scoring(self, tile_pos)
 		await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
+	var object_tiles: Array[Vector2i]
+	object_tiles= city.get_dynamic_object_tiles()
+	object_tiles.sort_custom(sort_by_coordinates)
+	for tile_pos in object_tiles:
+		var object: DynamicObjectTile= city.get_dynamic_object(tile_pos)
+		if object.custom_scoring != BaseTile.CustomScoringAlgorithm.NONE:
+			object.run_custom_scoring(self, tile_pos)
+			await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
+
+
+
 	Player.update_level_score(score)
 
 	Global.level.button_exit.disabled= false
