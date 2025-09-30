@@ -64,7 +64,8 @@ func pop_deck():
 
 
 func tick():
-	for tile in city.get_dynamic_object_tiles():
+	var tiles: Array[Vector2i]= city.get_dynamic_object_tiles()
+	for tile in tiles:
 		var obj: DynamicObjectTile= city.get_dynamic_object(tile)
 		obj.tick(tile)
 
