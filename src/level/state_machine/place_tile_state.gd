@@ -8,9 +8,12 @@ var rotation: float= 0.0:
 	set(r):
 		rotation= r
 		tile_sprite.rotation= r
-		if tile_to_place.flip_h and is_equal_approx(r, PI):
-			tile_sprite.rotation= 0
-			tile_sprite.flip_h
+		if tile_to_place.flip_h and is_equal_approx(wrapf(r, 0.0, PI * 2), PI):
+			#tile_sprite.rotation= 0
+			tile_sprite.flip_v= true
+		else:
+			tile_sprite.flip_v= false
+
 
 
 func _ready() -> void:
