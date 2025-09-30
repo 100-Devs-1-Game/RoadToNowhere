@@ -42,10 +42,11 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 	if target_tilemap == TileLayer.BUILDINGS or target_tilemap == TileLayer.ROADS:
 		place_tile(asphalt_tile, tile_pos)
 		if target_tilemap == TileLayer.BUILDINGS:
-			for neighbor_pos in get_neighbor_tiles(tile_pos):
-				if is_water_tile(neighbor_pos):
-					continue
-				place_tile(asphalt_tile, neighbor_pos)
+			#for neighbor_pos in get_neighbor_tiles(tile_pos):
+				#if is_water_tile(neighbor_pos):
+					#continue
+				#place_tile(asphalt_tile, neighbor_pos)
+			place_tile(asphalt_tile, tile_pos)
 		elif target_tilemap == TileLayer.ROADS:
 			assert(tile_to_place is PlaceableTile)
 			var road: PlaceableTile= tile_to_place
