@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_pressed(): return
+	if not OS.is_debug_build(): return
 	if event is InputEventKey:
 		if event.keycode == KEY_F2:
 			level.state_machine.change_state(level.state_machine.scoring_phase)
