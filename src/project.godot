@@ -22,6 +22,7 @@ FloatingText="*res://global/floating_text/floating_text.tscn"
 GameData="*res://global/game_data.tscn"
 Player="*res://global/player.gd"
 SceneLoader="*res://global/scene_loader.tscn"
+SaveManager="*res://global/save_manager.gd"
 
 [display]
 

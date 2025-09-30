@@ -2,6 +2,10 @@ class_name CampaignData
 extends Resource
 
 @export var level_data: Array[LevelData]
+@export var dummy: bool= true:
+	set(d):
+		SaveManager.register_campaign.call_deferred(self)
+
 var level_scores: Array[int]
 
 
@@ -16,3 +20,19 @@ func update_level_score(score: int):
 		var delta: int= score - current_score
 		level_scores[level_index]= score
 		Player.earn(delta)
+
+
+func serialize()-> Dictionary:
+	var dict:= {}
+	var arr:= []
+	for level in level_data:
+		arr.append(level.unlocked)
+	dict["unlocked"]= arr
+	dict["scores"]= level_scores.duplicate()
+	return dict
+
+
+func deserialize(dict: Dictionary):
+	for i in level_data.size():
+		level_data[i].unlocked= dict["unlocked"]
+	level_scores.assign(dict["scores"])

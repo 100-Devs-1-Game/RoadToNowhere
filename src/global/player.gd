@@ -22,6 +22,24 @@ func earn(amount: int):
 	money+= amount
 
 
+func serialize()-> Dictionary:
+	var dict:= {}
+	dict["money"]= money
+	dict["deck"]= deck.serialize()
+	dict["max_size"]= max_deck_size
+	dict["swap"]= has_swap_joker
+	dict["skip"]= has_skip_joker
+	return dict
+
+
+func deserialize(dict: Dictionary):
+	money= dict["money"]
+	deck.deserialize(dict["deck"])
+	max_deck_size= dict["max_size"]
+	has_swap_joker= dict["swap"] 
+	has_skip_joker= dict["skip"] 
+
+
 func get_money_str()-> String:
 	return str("$", money)
 

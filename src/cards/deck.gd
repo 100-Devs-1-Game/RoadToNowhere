@@ -56,6 +56,21 @@ func remove_card(data: CardData):
 	assert(false)
 
 
+func serialize()-> Dictionary:
+	var dict:= {}
+	var arr:= []
+	for card in cards:
+		arr.append(GameData.card_pool.find(card.data))
+	dict["cards"]= arr
+	return dict
+
+
+func deserialize(dict: Dictionary):
+	clear()
+	for card_id: int in dict["cards"]:
+		add_card(GameData.card_pool[card_id])
+
+
 func dump():
 	print("--Dump Deck--")
 	for i in range(get_size() - 1, -1, -1):
