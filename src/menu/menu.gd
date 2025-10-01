@@ -10,7 +10,16 @@ func _ready() -> void:
 	for x in rect.size.x:
 		for y in rect.size.y:
 			var tile:= Vector2i(x, y) + rect.position
-			tile_map.set_cell(tile, randi_range(0, 5), Vector2i.ZERO)
+			var tile_alternate: int
+			match randi() % 4:
+				1:
+					tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_H
+				2:
+					tile_alternate= TileSetAtlasSource.TRANSFORM_FLIP_H
+				3:
+					tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_V
+						
+			tile_map.set_cell(tile, randi_range(0, 5), Vector2i.ZERO, tile_alternate)
 	
 	await get_tree().process_frame
 	for child: Control in settings_container.get_children():
