@@ -69,6 +69,19 @@ func update():
 		play_button.disabled= not level_data.unlocked or not Player.is_deck_perfect_size()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not OS.is_debug_build():
+		return
+	if not event.is_pressed():
+		return
+	
+	if event is InputEventKey:
+		if event.keycode == KEY_F1:
+			for level in data.level_data:
+				level.unlocked= true
+			update()
+
+
 func on_unlock(level_data: LevelData, cost: int):
 	level_data.unlocked= true
 	Player.buy(cost)
