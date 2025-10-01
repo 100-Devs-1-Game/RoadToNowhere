@@ -21,15 +21,24 @@ func update_level_score(score: int):
 
 func serialize()-> Dictionary:
 	var dict:= {}
-	var arr:= []
+	var arr_unlocked_levels:= []
 	for level in level_data:
-		arr.append(level.unlocked)
-	dict["unlocked"]= arr
+		arr_unlocked_levels.append(level.unlocked)
+	dict["unlocked_levels"]= arr_unlocked_levels
 	dict["scores"]= level_scores.duplicate()
+	
+	var arr_unlocked_cards:= []
+	for card in GameData.card_pool:
+		arr_unlocked_cards.append(card.unlocked)
+	dict["unlocked_cards"]= arr_unlocked_cards
+	
 	return dict
 
 
 func deserialize(dict: Dictionary):
 	for i in level_data.size():
-		level_data[i].unlocked= dict["unlocked"][i]
+		level_data[i].unlocked= dict["unlocked_levels"][i]
 	level_scores.assign(dict["scores"])
+
+	for i in GameData.card_pool.size():
+		GameData.card_pool[i].unlocked= dict["unlocked_cards"][i]

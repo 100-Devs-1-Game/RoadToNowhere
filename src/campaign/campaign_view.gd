@@ -21,8 +21,8 @@ func _ready() -> void:
 	if not SaveManager.campaign_data:
 		SaveManager.register_campaign(data)
 		SaveManager.load_game()
-	else :
-		SaveManager.save_game()
+
+	SaveManager.save_game()
 	
 	if data.level_scores.is_empty():
 		data.level_scores.resize(data.level_data.size())
