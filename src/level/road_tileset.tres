@@ -1,0 +1,47 @@
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://80dvq8s4ameb"]
+
+[ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/streets/street_straight.png" id="1_jv73g"]
+[ext_resource type="Texture2D" uid="uid://c0glopjtk8rbr" path="res://assets/tileset/singles/streets/street_crossing.png" id="2_2su87"]
+[ext_resource type="Texture2D" uid="uid://bgeqdl0pblrav" path="res://assets/tileset/singles/streets/street_dead_end.png" id="3_0qu6g"]
+[ext_resource type="Texture2D" uid="uid://lon8aolxhdc5" path="res://assets/tileset/singles/streets/street_turn.png" id="4_2ony8"]
+[ext_resource type="Texture2D" uid="uid://b8a4bn58iil4e" path="res://assets/tileset/singles/streets/street_t_junction.png" id="5_ws5de"]
+[ext_resource type="Texture2D" uid="uid://c8uete2pck4pq" path="res://assets/tileset/singles/streets/street_parking.png" id="6_wncg5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pxul"]
+texture = ExtResource("1_jv73g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fedht"]
+texture = ExtResource("2_2su87")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4c15r"]
+texture = ExtResource("3_0qu6g")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj6e6"]
+texture = ExtResource("4_2ony8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2h3vt"]
+texture = ExtResource("5_ws5de")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjxuc"]
+texture = ExtResource("6_wncg5")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_5pxul")
+sources/1 = SubResource("TileSetAtlasSource_fedht")
+sources/2 = SubResource("TileSetAtlasSource_4c15r")
+sources/3 = SubResource("TileSetAtlasSource_fj6e6")
+sources/4 = SubResource("TileSetAtlasSource_2h3vt")
+sources/5 = SubResource("TileSetAtlasSource_yjxuc")

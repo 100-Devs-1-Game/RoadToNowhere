@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://m3lp85yxelcn"]
+[gd_scene load_steps=62 format=4 uid="uid://m3lp85yxelcn"]
 
 [ext_resource type="Script" uid="uid://dtvke5elhjevp" path="res://level/level.gd" id="1_u52ul"]
 [ext_resource type="Script" uid="uid://1gmh6dexhnbe" path="res://level/level_sandbox.gd" id="2_2orkt"]
@@ -6,11 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bfqdft0aljwnx" path="res://assets/tileset/singles/terrain/asphalt_tile.png" id="4_km5ld"]
 [ext_resource type="Script" uid="uid://dnkvdh7bp5y4i" path="res://cards/card_data.gd" id="5_aoqsc"]
 [ext_resource type="Texture2D" uid="uid://ce8nk8nek2syv" path="res://assets/tileset/singles/buildings/house.png" id="5_i2t4f"]
-[ext_resource type="Texture2D" uid="uid://dr7xp1vtyha6b" path="res://assets/tileset/singles/streets/street_straight.png" id="6_8cye3"]
 [ext_resource type="Resource" uid="uid://hxycm2xbvokb" path="res://cards/data/card_straight_street.tres" id="6_mleqk"]
-[ext_resource type="Texture2D" uid="uid://c0glopjtk8rbr" path="res://assets/tileset/singles/streets/street_crossing.png" id="7_2orkt"]
 [ext_resource type="Resource" uid="uid://dl7hf28qrlk6s" path="res://cards/data/card_turn.tres" id="7_6btg4"]
-[ext_resource type="Texture2D" uid="uid://bgeqdl0pblrav" path="res://assets/tileset/singles/streets/street_dead_end.png" id="8_aicyk"]
 [ext_resource type="Resource" uid="uid://cbp5qsnidyls6" path="res://cards/data/card_excavate.tres" id="8_sl4om"]
 [ext_resource type="Resource" uid="uid://dy575ecb4nihq" path="res://cards/data/card_t_junction.tres" id="9_6btg4"]
 [ext_resource type="PackedScene" uid="uid://b3er8fw54mg2c" path="res://cards/empty_card.tscn" id="9_i2t4f"]
@@ -29,14 +26,11 @@
 [ext_resource type="Script" uid="uid://cuvyu4ppqqjha" path="res://level/state_machine/level_state_machine.gd" id="14_v5j5c"]
 [ext_resource type="Script" uid="uid://crka775kceip5" path="res://level/state_machine/draw_card_state.gd" id="15_5pxul"]
 [ext_resource type="Texture2D" uid="uid://bbidhb8om86kb" path="res://assets/tileset/singles/terrain/water_tile.png" id="15_aoqsc"]
-[ext_resource type="Texture2D" uid="uid://lon8aolxhdc5" path="res://assets/tileset/singles/streets/street_turn.png" id="16_ilwjd"]
 [ext_resource type="Texture2D" uid="uid://i8tytada0txn" path="res://assets/tileset/singles/terrain/swamp_grass_tile.png" id="16_mleqk"]
 [ext_resource type="Resource" uid="uid://cjvucgx3b5qh7" path="res://level/data/tiles/ground/river_tile.tres" id="16_wp8k7"]
 [ext_resource type="Resource" uid="uid://ccsx6qxw27xhb" path="res://level/data/tiles/buildings/house_tile.tres" id="17_na3no"]
 [ext_resource type="Resource" uid="uid://3yoluykrat12" path="res://level/data/tiles/objects/tree_tile.tres" id="17_wp8k7"]
-[ext_resource type="Texture2D" uid="uid://b8a4bn58iil4e" path="res://assets/tileset/singles/streets/street_t_junction.png" id="17_y3bce"]
 [ext_resource type="Resource" uid="uid://c1mueqekg8h8x" path="res://level/data/tiles/buildings/factory_tile.tres" id="18_07udg"]
-[ext_resource type="Texture2D" uid="uid://c8uete2pck4pq" path="res://assets/tileset/singles/streets/street_parking.png" id="18_u3yai"]
 [ext_resource type="Script" uid="uid://btts8e71u2m77" path="res://level/state_machine/scoring_phase_state.gd" id="19_ait7k"]
 [ext_resource type="Texture2D" uid="uid://dxtyeav4f0dkp" path="res://assets/tileset/singles/misc/rubble.png" id="20_6btg4"]
 [ext_resource type="Resource" uid="uid://c11x4gqslsgle" path="res://level/data/tiles/dynamic_objects/car_tile.tres" id="20_na3no"]
@@ -46,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://m0gj5la0r7bi" path="res://assets/tileset/singles/misc/car_red.png" id="28_0mnfp"]
 [ext_resource type="Texture2D" uid="uid://blfuvidd78x46" path="res://assets/tileset/singles/misc/activist_megaphone.png" id="29_qw2y7"]
 [ext_resource type="Script" uid="uid://bhnkxgwlsjki" path="res://level/state_machine/help_mode_state.gd" id="32_sl4om"]
+[ext_resource type="TileSet" uid="uid://80dvq8s4ameb" path="res://level/road_tileset.tres" id="33_k1ecl"]
 [ext_resource type="Texture2D" uid="uid://ygtmexp18pm2" path="res://assets/tileset/colored_frames.png" id="37_samc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qw2y7"]
@@ -113,45 +108,6 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_ut2i6")
 sources/1 = SubResource("TileSetAtlasSource_0mnfp")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pxul"]
-texture = ExtResource("6_8cye3")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fedht"]
-texture = ExtResource("7_2orkt")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4c15r"]
-texture = ExtResource("8_aicyk")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj6e6"]
-texture = ExtResource("16_ilwjd")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2h3vt"]
-texture = ExtResource("17_y3bce")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjxuc"]
-texture = ExtResource("18_u3yai")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ait7k"]
-tile_size = Vector2i(64, 64)
-sources/0 = SubResource("TileSetAtlasSource_5pxul")
-sources/1 = SubResource("TileSetAtlasSource_fedht")
-sources/2 = SubResource("TileSetAtlasSource_4c15r")
-sources/3 = SubResource("TileSetAtlasSource_fj6e6")
-sources/4 = SubResource("TileSetAtlasSource_2h3vt")
-sources/5 = SubResource("TileSetAtlasSource_yjxuc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uuqa8"]
 texture = ExtResource("28_0mnfp")
@@ -235,7 +191,7 @@ tile_set = SubResource("TileSet_v5j5c")
 tile_set = SubResource("TileSet_qw2y7")
 
 [node name="TileMapLayer Roads" type="TileMapLayer" parent="City"]
-tile_set = SubResource("TileSet_ait7k")
+tile_set = ExtResource("33_k1ecl")
 
 [node name="TileMapLayer Dynamic Objects" type="TileMapLayer" parent="City"]
 tile_set = SubResource("TileSet_oaehd")
