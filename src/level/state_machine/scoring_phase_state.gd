@@ -105,8 +105,6 @@ func score_city():
 			object.run_custom_scoring(self, tile_pos)
 			await get_tree().create_timer(SCORE_DISPLAY_INTERVAL).timeout
 
-
-
 	Player.update_level_score(score)
 
 	Global.level.button_exit.disabled= false
@@ -175,6 +173,9 @@ func trigger_score(tile: Vector2i, amount: int, offset: Vector2= Vector2.ZERO):
 		atlas_coords= Vector2i(1, 0)
 	elif amount < 0:
 		atlas_coords= Vector2i(2, 0)
+		AudioManager.play_sound("score_negative")
+	else:
+		AudioManager.play_sound("score_positive")
 		
 	tile_map_marker.set_cell(tile, 0, atlas_coords)
 

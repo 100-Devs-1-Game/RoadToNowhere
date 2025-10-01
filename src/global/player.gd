@@ -20,6 +20,7 @@ func update_level_score(score: int):
 
 func earn(amount: int):
 	money+= amount
+	AudioManager.play_sound("highscore")
 
 
 func serialize()-> Dictionary:
