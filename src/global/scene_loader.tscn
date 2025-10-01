@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://db8ft47davjlo"]
+[gd_scene load_steps=6 format=3 uid="uid://db8ft47davjlo"]
 
 [ext_resource type="Script" uid="uid://bpl31l8w0l5ah" path="res://global/scene_loader.gd" id="1_aagan"]
 [ext_resource type="PackedScene" uid="uid://m3lp85yxelcn" path="res://level.tscn" id="2_bkc7g"]
 [ext_resource type="PackedScene" uid="uid://cnfo6gak221xo" path="res://campaign/campaign_view.tscn" id="3_sjw1y"]
 [ext_resource type="PackedScene" uid="uid://c0wae6mlpwlsv" path="res://deck_builder/deck_builder.tscn" id="4_hwx0j"]
+[ext_resource type="PackedScene" uid="uid://cmqw8ood3jx5" path="res://menu/menu.tscn" id="5_sjw1y"]
 
 [node name="SceneLoader" type="Node"]
 script = ExtResource("1_aagan")
 level_scene = ExtResource("2_bkc7g")
 campaign_view = ExtResource("3_sjw1y")
 deck_builder = ExtResource("4_hwx0j")
+main_menu = ExtResource("5_sjw1y")

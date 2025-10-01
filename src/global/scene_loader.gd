@@ -3,6 +3,7 @@ extends Node
 @export var level_scene: PackedScene
 @export var campaign_view: PackedScene
 @export var deck_builder: PackedScene
+@export var main_menu: PackedScene
 
 var level_data: LevelData
 
@@ -22,4 +23,4 @@ func build_deck():
 
 
 func enter_main_menu():
-	get_tree().quit()
+	get_tree().change_scene_to_packed(main_menu)
