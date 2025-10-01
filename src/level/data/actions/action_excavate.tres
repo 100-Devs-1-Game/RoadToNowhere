@@ -12,6 +12,8 @@ grass_tile = ExtResource("1_coql2")
 swamp_tile = ExtResource("3_a7bg5")
 rubble_tile = ExtResource("3_qgyg1")
 display_name = "Excavator"
-description = "Remove rubble and swamp"
+description = "Remove rubble and swamp.
+
+Skip with right click"
 icon = ExtResource("2_gh7hg")
 metadata/_custom_type_script = "uid://eady8upxujd1"

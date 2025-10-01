@@ -8,6 +8,8 @@
 script = ExtResource("1_wefar")
 tree_tile = ExtResource("3_a6wlh")
 display_name = "Fell Tree"
-description = "Remove tree"
+description = "Remove tree.
+
+Skip with right click"
 icon = ExtResource("1_dk4lp")
 metadata/_custom_type_script = "uid://bfi8as8cnf7y4"
