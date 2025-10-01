@@ -7,6 +7,8 @@ extends Node
 @onready var player_menu_music: AudioStreamPlayer = $"AudioStreamPlayer Menu Music"
 @onready var player_level_music: AudioStreamPlayer = $"AudioStreamPlayer Level Music"
 
+var queue_music: Callable= play_menu_music
+
 
 
 func _ready() -> void:
@@ -32,12 +34,16 @@ func play_sound(sound_name: String):
 func play_menu_music():
 	if player_menu_music.playing:
 		return
+	queue_music= play_menu_music
 	player_level_music.stop()
 	player_menu_music.play()
 
 
 func play_level_music():
 	if player_level_music.playing:
+		return
+	if queue_music != play_level_music:
+		queue_music= play_level_music
 		return
 	player_menu_music.stop()
 	player_level_music.play()
@@ -48,3 +54,7 @@ func get_free_player()-> AudioStreamPlayer:
 		if not player.playing:
 			return player
 	return null
+
+
+func _on_audio_stream_player_menu_music_finished() -> void:
+	queue_music.call()
