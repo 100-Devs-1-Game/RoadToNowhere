@@ -32,12 +32,14 @@ func play_sound(sound_name: String):
 func play_menu_music():
 	if player_menu_music.playing:
 		return
+	player_level_music.stop()
 	player_menu_music.play()
 
 
 func play_level_music():
 	if player_level_music.playing:
 		return
+	player_menu_music.stop()
 	player_level_music.play()
 
 
