@@ -112,9 +112,11 @@ func _on_button_increase_deck_size_pressed() -> void:
 
 func _on_button_swap_pressed() -> void:
 	Player.has_swap_joker= true
+	Player.buy(swap_cost)
 	update()
 
 
 func _on_button_skip_pressed() -> void:
 	Player.has_skip_joker= true
+	Player.buy(skip_cost)
 	update()
