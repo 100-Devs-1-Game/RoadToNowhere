@@ -15,8 +15,10 @@ bus = &"Sfx"
 
 [node name="AudioStreamPlayer Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hjth8")
+bus = &"Music"
 
 [node name="AudioStreamPlayer Level Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_hd106")
+bus = &"Music"
 
 [connection signal="finished" from="AudioStreamPlayer Menu Music" to="." method="_on_audio_stream_player_menu_music_finished"]
