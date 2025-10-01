@@ -6,6 +6,7 @@
 script = ExtResource("1_p8uyt")
 can_build_on = true
 behavior = 0
+build_on_sound = "car"
 name = "Car"
 description = "Build a road under it to gain points"
 target_tilemap = 4

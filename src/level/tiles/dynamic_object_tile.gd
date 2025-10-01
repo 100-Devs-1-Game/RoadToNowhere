@@ -5,6 +5,8 @@ enum Behavior { STATIC, MOVING }
 
 @export var can_build_on: bool= false
 @export var behavior: Behavior
+@export var build_on_sound: String
+
 
 
 func tick(tile_pos: Vector2i):

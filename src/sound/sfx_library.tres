@@ -88,7 +88,7 @@ metadata/_custom_type_script = "uid://80a87mr5ldoe"
 script = ExtResource("1_qgi7i")
 name = "car"
 audio_stream = ExtResource("12_dhf3u")
-db_delta = 0.0
+db_delta = -5.0
 metadata/_custom_type_script = "uid://80a87mr5ldoe"
 
 [resource]

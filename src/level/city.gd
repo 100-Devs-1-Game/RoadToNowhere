@@ -42,10 +42,6 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 	if target_tilemap == TileLayer.BUILDINGS or target_tilemap == TileLayer.ROADS:
 		place_tile(asphalt_tile, tile_pos)
 		if target_tilemap == TileLayer.BUILDINGS:
-			#for neighbor_pos in get_neighbor_tiles(tile_pos):
-				#if is_water_tile(neighbor_pos):
-					#continue
-				#place_tile(asphalt_tile, neighbor_pos)
 			place_tile(asphalt_tile, tile_pos)
 		elif target_tilemap == TileLayer.ROADS:
 			assert(tile_to_place is PlaceableTile)
@@ -60,6 +56,11 @@ func place_tile(tile_to_place: BaseTile, tile_pos: Vector2i, tile_rot: float= 0.
 				var rotated_connection: Vector2i= vec_rot.round()
 				#prints("Connection", rotated_connection)
 				road_connections[tile_pos].append(rotated_connection)
+
+	if target_tilemap != TileLayer.DYNAMIC_OBJECTS and tile_pos in get_dynamic_object_tiles():
+		var object: DynamicObjectTile= get_dynamic_object(tile_pos)
+		if object.build_on_sound:
+			AudioManager.play_sound(object.build_on_sound)
 
 
 func remove_tile(tile_pos: Vector2i, layer: TileLayer):
