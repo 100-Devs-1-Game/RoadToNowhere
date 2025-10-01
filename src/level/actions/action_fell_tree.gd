@@ -6,6 +6,8 @@ extends BaseAction
 
 
 func can_execute(tile_pos: Vector2i)-> bool:
+	if Global.city.has_blocking_dynamic_object(tile_pos):
+		return false
 	var object: ObjectTile= Global.city.get_object(tile_pos)
 	return object == tree_tile
 

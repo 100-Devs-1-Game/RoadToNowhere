@@ -97,6 +97,12 @@ func can_build_tile_at(tile: Vector2i)-> bool:
 	return true
 
 
+func has_blocking_dynamic_object(tile_pos: Vector2i)-> bool:
+	if tile_pos not in get_dynamic_object_tiles():
+		return false
+	return not get_dynamic_object(tile_pos).can_build_on 
+
+
 func get_tilemap(type: TileLayer)-> TileMapLayer:
 	return tilemaps[int(type)]
 

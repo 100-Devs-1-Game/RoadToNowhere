@@ -7,6 +7,9 @@ extends BaseAction
 
 
 func can_execute(tile_pos: Vector2i)-> bool:
+	if Global.city.has_blocking_dynamic_object(tile_pos):
+		return false
+
 	var building: BuildingTile= Global.city.get_building(tile_pos)
 	if building:
 		return true
