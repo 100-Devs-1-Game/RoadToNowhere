@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://dt7bfgaakef0j" path="res://campaign/campaign_levels/level_1.tres" id="2_wcraj"]
 [ext_resource type="Resource" uid="uid://c528iar4e4rn8" path="res://campaign/campaign_levels/level_2.tres" id="3_3mbot"]
 [ext_resource type="Resource" uid="uid://cyqj2qmdkh3py" path="res://campaign/campaign_levels/level_3.tres" id="4_twoj5"]
-[ext_resource type="Resource" uid="uid://d3lk3i4f2dxdx" path="res://campaign/campaign_levels/level_4.tres" id="5_ud88y"]
+[ext_resource type="Resource" uid="uid://ck2iwpgvmxxit" path="res://campaign/campaign_levels/level_4.tres" id="5_ud88y"]
 [ext_resource type="Resource" uid="uid://covimx70f0kqu" path="res://campaign/campaign_levels/level_5.tres" id="6_3m7mp"]
 [ext_resource type="Resource" uid="uid://d0oee6dryw1ni" path="res://campaign/campaign_levels/level_6.tres" id="7_kcopr"]
 [ext_resource type="Resource" uid="uid://ciwkmpeh1bm8o" path="res://campaign/campaign_levels/level_7.tres" id="8_s5sfj"]
