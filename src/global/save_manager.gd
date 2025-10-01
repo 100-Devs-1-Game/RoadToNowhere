@@ -28,5 +28,10 @@ func load_game():
 	campaign_data.deserialize(dict["campaign"])
 
 
+func delete_save_file():
+	var dir:= DirAccess.open("user://")
+	dir.remove(SAVE_FILE.get_file())
+
+
 func register_campaign(data: CampaignData):
 	campaign_data= data
