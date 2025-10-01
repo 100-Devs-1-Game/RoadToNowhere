@@ -96,6 +96,7 @@ func on_card_bought(card_data: CardData):
 
 
 func on_deck_updated():
+	AudioManager.play_sound("edit_deck")
 	update()
 
 
