@@ -10,11 +10,13 @@ var level_data: LevelData
 
 
 func play_level(_level_data: LevelData):
+	play_click()
 	level_data= _level_data
 	get_tree().change_scene_to_packed(level_scene)
 
 
 func enter_campaign():
+	play_click()
 	if not Player.is_deck_perfect_size():
 		build_deck()
 	else:
@@ -22,8 +24,14 @@ func enter_campaign():
 	
 
 func build_deck():
+	play_click()
 	get_tree().change_scene_to_packed(deck_builder)
 
 
 func enter_main_menu():
+	play_click()
 	get_tree().change_scene_to_packed(main_menu)
+
+
+func play_click():
+	AudioManager.play_sound("click")

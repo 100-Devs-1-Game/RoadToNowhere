@@ -11,6 +11,7 @@ var has_skip_joker: bool= false
 
 func buy(cost: int):
 	money-= cost
+	AudioManager.play_sound("cash")
 
 
 func update_level_score(score: int):

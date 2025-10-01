@@ -24,6 +24,7 @@ func _on_button_start_pressed() -> void:
 
 
 func _on_button_reset_pressed() -> void:
+	AudioManager.play_sound("click")
 	SaveManager.delete_save_file()
 
 
@@ -32,4 +33,5 @@ func _on_h_slider_volume_value_changed(value: float) -> void:
 
 
 func _on_check_box_music_toggled(toggled_on: bool) -> void:
+	AudioManager.play_sound("click")
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), not toggled_on)
