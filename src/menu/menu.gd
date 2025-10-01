@@ -2,6 +2,8 @@ extends PanelContainer
 
 @onready var settings_container: GridContainer = %"GridContainer Settings"
 @onready var tile_map: TileMapLayer = %TileMapLayer
+@onready var slider_volume: HSlider = %"HSlider Volume"
+@onready var check_box_music: CheckBox = %"CheckBox Music"
 
 
 
@@ -20,6 +22,9 @@ func _ready() -> void:
 					tile_alternate= TileSetAtlasSource.TRANSFORM_TRANSPOSE | TileSetAtlasSource.TRANSFORM_FLIP_V
 						
 			tile_map.set_cell(tile, randi_range(0, 5), Vector2i.ZERO, tile_alternate)
+
+	slider_volume.value= AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Master"))
+	check_box_music.button_pressed= not AudioServer.is_bus_mute(AudioServer.get_bus_index("Music"))
 	
 	await get_tree().process_frame
 	for child: Control in settings_container.get_children():
