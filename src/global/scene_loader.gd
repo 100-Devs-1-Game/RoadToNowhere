@@ -15,7 +15,10 @@ func play_level(_level_data: LevelData):
 
 
 func enter_campaign():
-	get_tree().change_scene_to_packed(campaign_view)
+	if not Player.is_deck_perfect_size():
+		build_deck()
+	else:
+		get_tree().change_scene_to_packed(campaign_view)
 	
 
 func build_deck():
