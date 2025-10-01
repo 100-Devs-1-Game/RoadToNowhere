@@ -16,6 +16,6 @@ func can_execute(tile_pos: Vector2i)-> bool:
 func execute(tile_pos: Vector2i):
 	var city: City= Global.city
 	if tile_pos in city.get_object_tiles():
-		city.remove_object(tile_pos)
+		city.remove_tile(tile_pos, City.TileLayer.OBJECTS)
 	else:
 		city.place_tile(grass_tile, tile_pos)

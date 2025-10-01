@@ -11,4 +11,4 @@ func can_execute(tile_pos: Vector2i)-> bool:
 
 
 func execute(tile_pos: Vector2i):
-	Global.city.remove_object(tile_pos)
+	Global.city.remove_tile(tile_pos, City.TileLayer.OBJECTS)
