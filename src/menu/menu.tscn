@@ -50,25 +50,30 @@ text = "Reset Campaign"
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_g18jx")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Settings"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Settings"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Settings/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="GridContainer Settings" type="GridContainer" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer/VBoxContainer"]
+[node name="GridContainer Settings" type="GridContainer" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 50
 columns = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer/VBoxContainer/GridContainer Settings"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer/GridContainer Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Audio volume"
 
-[node name="HSlider Volume" type="HSlider" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer/VBoxContainer/GridContainer Settings"]
+[node name="HSlider Volume" type="HSlider" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer/GridContainer Settings"]
 clip_contents = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -78,24 +83,24 @@ max_value = 1.0
 step = 0.1
 value = 1.0
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer/VBoxContainer/GridContainer Settings"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer/GridContainer Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Music"
 
-[node name="CheckBox Music" type="CheckBox" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer/VBoxContainer/GridContainer Settings"]
+[node name="CheckBox Music" type="CheckBox" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer/GridContainer Settings"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 focus_mode = 0
 button_pressed = true
 
-[node name="Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer"]
+[node name="Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6nwqt")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings/HBoxContainer/Panel"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/Panel"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Lead Game Designer
@@ -122,5 +127,5 @@ tile_set = ExtResource("2_g18jx")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button Start" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button Reset" to="." method="_on_button_reset_pressed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/Settings/HBoxContainer/VBoxContainer/GridContainer Settings/HSlider Volume" to="." method="_on_h_slider_volume_value_changed"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/Settings/HBoxContainer/VBoxContainer/GridContainer Settings/CheckBox Music" to="." method="_on_check_box_music_toggled"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer/GridContainer Settings/HSlider Volume" to="." method="_on_h_slider_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Settings/MarginContainer/HBoxContainer/VBoxContainer/GridContainer Settings/CheckBox Music" to="." method="_on_check_box_music_toggled"]
