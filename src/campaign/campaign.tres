@@ -1,12 +1,18 @@
-[gd_resource type="Resource" script_class="CampaignData" load_steps=6 format=3 uid="uid://dityb5ukupny7"]
+[gd_resource type="Resource" script_class="CampaignData" load_steps=12 format=3 uid="uid://dityb5ukupny7"]
 
 [ext_resource type="Script" uid="uid://b4dhmiu21q5o7" path="res://level/level_data.gd" id="1_e1q13"]
 [ext_resource type="Script" uid="uid://b6egf8qcnjhpt" path="res://campaign/campaign_data.gd" id="2_1lf75"]
 [ext_resource type="Resource" uid="uid://dt7bfgaakef0j" path="res://campaign/campaign_levels/level_1.tres" id="2_wcraj"]
 [ext_resource type="Resource" uid="uid://c528iar4e4rn8" path="res://campaign/campaign_levels/level_2.tres" id="3_3mbot"]
 [ext_resource type="Resource" uid="uid://cyqj2qmdkh3py" path="res://campaign/campaign_levels/level_3.tres" id="4_twoj5"]
+[ext_resource type="Resource" uid="uid://d3lk3i4f2dxdx" path="res://campaign/campaign_levels/level_4.tres" id="5_ud88y"]
+[ext_resource type="Resource" uid="uid://covimx70f0kqu" path="res://campaign/campaign_levels/level_5.tres" id="6_3m7mp"]
+[ext_resource type="Resource" uid="uid://d0oee6dryw1ni" path="res://campaign/campaign_levels/level_6.tres" id="7_kcopr"]
+[ext_resource type="Resource" uid="uid://ciwkmpeh1bm8o" path="res://campaign/campaign_levels/level_7.tres" id="8_s5sfj"]
+[ext_resource type="Resource" uid="uid://bs30lh05t2l4h" path="res://campaign/campaign_levels/level_8.tres" id="9_ppq6u"]
+[ext_resource type="Resource" uid="uid://curiafe1tihod" path="res://campaign/campaign_levels/level_9.tres" id="10_5jt1g"]
 
 [resource]
 script = ExtResource("2_1lf75")
-level_data = Array[ExtResource("1_e1q13")]([ExtResource("2_wcraj"), ExtResource("3_3mbot"), ExtResource("4_twoj5")])
+level_data = Array[ExtResource("1_e1q13")]([ExtResource("2_wcraj"), ExtResource("3_3mbot"), ExtResource("4_twoj5"), ExtResource("5_ud88y"), ExtResource("6_3m7mp"), ExtResource("7_kcopr"), ExtResource("8_s5sfj"), ExtResource("9_ppq6u"), ExtResource("10_5jt1g")])
 metadata/_custom_type_script = "uid://b6egf8qcnjhpt"

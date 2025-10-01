@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://ciwkmpeh1bm8o"]
+
+[ext_resource type="Script" uid="uid://b4dhmiu21q5o7" path="res://level/level_data.gd" id="1_jh6np"]
+
+[resource]
+script = ExtResource("1_jh6np")
+seed = 182
+difficulty = 5
+size = Vector2i(10, 10)
+unlocked = false
+metadata/_custom_type_script = "uid://b4dhmiu21q5o7"
