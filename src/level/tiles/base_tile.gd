@@ -19,11 +19,8 @@ func run_custom_scoring(state: ScoringPhaseState, tile: Vector2i, show_text: boo
 	match custom_scoring:
 		CustomScoringAlgorithm.PARKING:
 			for pos in Utils.get_neighbor_tiles(tile, true):
-				var ctr:= 0
 				if pos in city.get_building_tiles():
-					ctr+= 1
-				if ctr > 0:
-					score= ctr
+					score+= 1
 
 		CustomScoringAlgorithm.CAR:
 			if tile in city.get_road_tiles():
