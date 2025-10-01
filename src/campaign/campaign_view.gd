@@ -13,6 +13,8 @@ extends PanelContainer
 
 
 func _ready() -> void:
+	AudioManager.play_menu_music()
+	
 	if not Player.campaign_data:
 		Player.campaign_data= data
 	

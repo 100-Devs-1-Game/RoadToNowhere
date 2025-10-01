@@ -26,6 +26,9 @@ var current_card: CardData
 
 func _ready() -> void:
 	Global.level= self
+	
+	AudioManager.play_level_music()
+	
 	deck= Player.deck.copy()
 	deck.shuffle()
 	deck.half()

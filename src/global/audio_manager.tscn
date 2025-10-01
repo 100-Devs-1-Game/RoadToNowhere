@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmn00omux7hc3"]
+[gd_scene load_steps=5 format=3 uid="uid://cmn00omux7hc3"]
 
 [ext_resource type="Script" uid="uid://cry2e6rea5fcd" path="res://global/audio_manager.gd" id="1_siwhy"]
 [ext_resource type="Resource" uid="uid://cyy064m3yc1c" path="res://sound/sfx_library.tres" id="2_2b24j"]
+[ext_resource type="AudioStream" uid="uid://bkjs6pdo32ph2" path="res://assets/music/4_bar_bop.ogg" id="3_hjth8"]
+[ext_resource type="AudioStream" uid="uid://cepxnofrdcus1" path="res://assets/music/city_boppin_final.ogg" id="4_hd106"]
 
 [node name="Audio Manager" type="Node" node_paths=PackedStringArray("audio_players")]
 script = ExtResource("1_siwhy")
@@ -10,3 +12,9 @@ audio_players = [NodePath("AudioStreamPlayer")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"Sfx"
+
+[node name="AudioStreamPlayer Menu Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hjth8")
+
+[node name="AudioStreamPlayer Level Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hd106")
