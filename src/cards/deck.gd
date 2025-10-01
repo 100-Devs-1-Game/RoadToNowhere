@@ -58,10 +58,10 @@ func remove_card(data: CardData):
 
 func serialize()-> Dictionary:
 	var dict:= {}
-	var arr:= []
+	var arr_id:= []
 	for card in cards:
-		arr.append(GameData.card_pool.find(card.data))
-	dict["cards"]= arr
+		arr_id.append(GameData.card_pool.find(card.data))
+	dict["cards"]= arr_id
 	return dict
 
 
